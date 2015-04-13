@@ -1,0 +1,142 @@
+/**
+ * -------------------------
+ *  Post
+ * -------------------------
+ */
+
+$information
+    color #cacace
+
+$post-other-infos
+  font-size 12px
+  color #BFBFBF
+
+$post-user-info
+    font-size 11px
+    font-family 'lato', sans-serif
+    &:hover
+        color #1e88e2
+        text-decoration underline
+
+@keyframes fadein
+  from
+    opacity: 0
+  to
+    opacity 1
+
+.post
+  clearfix()
+  position relative
+  display block
+  margin-top 50px
+  padding-left 30px
+  padding-right 30px
+  padding-bottom 20px
+  cursor pointer
+  animation fadein 1s
+
+  iframe
+    display block
+    width 100%
+    height 250px
+
+  img
+    display block
+    max-width 100%
+
+  &-network
+    position absolute
+    top 6px
+    right 30px
+    width 10px
+  //&-content
+
+  &-midia
+    margin-top 10px;
+
+  &-text
+    percent(18px, $font-size)
+    line-height 1.4
+    color #333
+
+    &-togle
+      color #B3D6F3
+
+  &-actions
+    margin-top 17px
+    &.facebook
+      color #6d84b4
+    &.twitter
+      color #C2C2C2
+    clearfix()
+    float right
+    &-container
+      clearfix()
+      line-height 22px
+
+    &-replys-toggle
+      color $twitter-color
+      float left
+      font-size 12px
+
+    &-item
+      font-size 12px
+      float left
+      padding 0 10px
+
+  &-favorite-count,
+  &-retweet-count
+    display inline-block
+
+  &-reply
+    padding-left 20px
+    margin-top 45px
+
+  /*
+    -user
+  */
+  &-user
+    clearfix()
+    margin-left 48px
+    margin-bottom 10px
+    color #AAA
+
+    &-facebook
+      color #3A5998
+
+    &-twitter
+      color #54ACED
+
+    &-name
+      margin-top 2px
+      font-size 14px
+      display block
+      color #272D33
+
+    &-image
+      float left
+      width 40px
+      display block
+      margin-right 3px
+      border-radius 100%
+
+  &-info
+    position relative
+    line-height 50px
+
+  &-img
+    display block
+
+    &-container
+      float left
+      margin-right 10px
+      width 50px
+      height 50px
+      overflow hidden
+      border-radius 100%
+
+  &-from,
+  &-to,
+  &-location,
+  &-time-ago
+    @extend $post-other-infos

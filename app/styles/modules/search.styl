@@ -1,0 +1,23 @@
+.search
+  margin-top 50px
+  center(max_width = 350px)
+  +above($tablet)
+    uncenter()
+    margin-left 300px
+  &-label
+    display none
+
+  &-input
+    width 92%
+    border none
+    font-size 50px
+    font-family $font-primary
+    font-weight 100
+    color rgba(0, 0, 0, 0.6)
+    +placeholder()
+      color rgba(0, 0, 0, 0.6)
+    &:focus
+      outline none
+      border-color #66AFE9
+      border-bottom 1px solid #EEE
+

@@ -3,6 +3,8 @@ import Application from '../../app';
 import Router from '../../router';
 import config from '../../config/environment';
 
+import 'simple-auth-testing/test-helpers';
+
 export default function startApp(attrs) {
   var application;
 

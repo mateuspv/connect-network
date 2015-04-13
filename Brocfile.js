@@ -1,8 +1,15 @@
 /* global require, module */
 
 var EmberApp = require('ember-cli/lib/broccoli/ember-app');
+var Jeet = require('jeet');
+var Rupture = require('rupture');
+var KS = require('kouto-swiss');
 
-var app = new EmberApp();
+var app = new EmberApp({
+  stylusOptions: {
+    use: [Rupture(), KS(), Jeet()]
+  }
+});
 
 // Use `app.import` to add additional libraries to the generated
 // output files.

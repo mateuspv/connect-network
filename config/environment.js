@@ -13,6 +13,10 @@ module.exports = function(environment) {
       }
     },
 
+    'simple-auth': {
+      routeAfterAuthentication: 'posts.index',
+    },
+
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
@@ -20,15 +24,24 @@ module.exports = function(environment) {
   };
 
   if (environment === 'development') {
-    // ENV.APP.LOG_RESOLVER = true;
-    // ENV.APP.LOG_ACTIVE_GENERATION = true;
-    // ENV.APP.LOG_TRANSITIONS = true;
-    // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
-    // ENV.APP.LOG_VIEW_LOOKUPS = true;
+    ENV.APP.URL_API = 'http://localhost:4200';
+    ENV.APP.URL_AUTH_STATUS = ENV.APP.URL_API + '/api/auth/status';
+    ENV.APP.URL_AUTH_FACEBOOK = ENV.APP.URL_API + '/api/auth/facebook';
+    ENV.APP.URL_AUTH_TWITTER = ENV.APP.URL_API + '/api/auth/twitter';
+    ENV.APP.URL = 'http://localhost:4200/';
+
+    ENV['simple-auth'].store = 'simple-auth-session-store:local-storage';
   }
 
   if (environment === 'test') {
-    // Testem prefers this...
+    ENV.APP.URL_API = 'http://localhost:4200';
+    ENV.APP.URL_AUTH_STATUS = ENV.APP.URL_API + '/api/auth/status';
+    ENV.APP.URL_AUTH_FACEBOOK = ENV.APP.URL_API + '/api/auth/facebook';
+    ENV.APP.URL_AUTH_TWITTER = ENV.APP.URL_API + '/api/auth/twitter';
+    ENV.APP.URL = 'http://localhost:4200/';
+
+    ENV['simple-auth'].store = 'simple-auth-session-store:ephemeral';
+
     ENV.baseURL = '/';
     ENV.locationType = 'none';
 
@@ -40,8 +53,16 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-
+    ENV.APP.URL_API = 'https://connect-network-server.herokuapp.com';
+    ENV.APP.URL_AUTH_STATUS = ENV.APP.URL_API + '/api/auth/status';
+    ENV.APP.URL_AUTH_FACEBOOK = ENV.APP.URL_API + '/api/auth/facebook';
+    ENV.APP.URL_AUTH_TWITTER = ENV.APP.URL_API + '/api/auth/twitter';
+    ENV.APP.URL = 'https://connect-network.herokuapp.com/';
+    ENV['simple-auth'].store = 'simple-auth-session-store:local-storage';
   }
+
+  ENV['simple-auth'].authorizer ='authorizer:custom';
+  ENV['simple-auth'].crossOriginWhitelist = [ENV.APP.URL_API, ENV.APP.URL];
 
   return ENV;
 };

@@ -1,0 +1,23 @@
+/**
+ --------------------------------------------------
+    Timeline
+    .timeline
+        @post
+ --------------------------------------------------
+ */
+
+
+.timeline
+  margin 0 auto
+
+  +above(600px)
+    width 588px
+
+  &-container
+    padding 75px 30px 0 30px
+
+  > li
+    border-bottom 1px solid $light-silver
+
+    &:last-child
+      border-bottom none

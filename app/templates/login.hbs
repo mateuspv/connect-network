@@ -1,0 +1,17 @@
+<main class="about-plataform">
+  <h1 class="about-title">Bem vindo!</h1>
+  <p class="about-text">Conecte-se com seus amigos no <span class="mark-tw">Twitter</span> <span class="mark-yet">&</span> <span class="mark-fb">Facebook</span>, curta fotos, videos, posts e interaja com com seus amigos, Simples e rapido em apenas 2 Cliques!</p>
+  <div class="btns-connect-container">
+  <a {{bind-attr href=linkToAuthFacebook}} class="btn-connect-facebook">
+    <div class="icon-container">
+    </div>
+      facebook
+  </a>
+  <a {{bind-attr href=linkToAuthTwitter}} class="btn-connect-twitter">
+      <div class="icon-container">
+      </div>
+      twitter
+  </a>
+  {{outlet}}
+  </div>
+</main>

@@ -1,0 +1,58 @@
+/**
+  .post-form-container
+    .post-form
+      input.post-form-input
+      button.post-form-btn
+*/
+.post-form
+  @extend $input-style
+  margin-left 20px
+  margin-right 20px
+  padding 7px 0 0 0
+  min-height 37px
+  font-size 16px
+
+  +above(548px)
+    width 508px
+
+  &-container
+    padding 18px 0
+    min-height 67px
+    margin-bottom 1px
+    background-color #F2F6F9
+    .post-form
+      +above(548px)
+        margin 0 auto
+
+  &-input
+    width 100%
+    min-height 37px
+    text-indent 10px
+    resize vertical
+    color #878787
+    border none
+    border-radius 4px
+    outline none
+
+  &-btn
+      float right
+      width 90px
+      height 37px
+      border 1px solid #B3D6F3
+      background-image linear-gradient(0, #FAFAFA, #E3F0FB)
+      font-weight 600
+      color #C1C1C1
+      &:hover
+        background-color #E3F0FB
+        color #1e88e2
+
+  &-actions
+    clearfix()
+    width 509px
+    margin 8px auto 8px auto
+    .warning
+      color #5bc0de
+    .danger
+      color #f0ad4e
+    .outbound
+      color #d9534f
