@@ -1,7 +1,6 @@
 import Ember from 'ember';
-import config from '../config/environment';
-
 import LoginControllerMixin from 'simple-auth/mixins/login-controller-mixin';
+import LinkTo from '../utils/server-link';
 
 export default Ember.Controller.extend(LoginControllerMixin, {
   queryParams: ['token'],
@@ -24,35 +23,35 @@ export default Ember.Controller.extend(LoginControllerMixin, {
     this._reSetToken();
   },
 
-  _linkTo(link) {
+  _extractToken() {
     var session = this.get('session');
-    var token = session.get('token') || '';
-    return `${link}?token=${token}`;
-  },
-
-  _linkToAuth(link) {
-    var session = this.get('session');
-    var token = session.get('token') || '';
-    var redirect = config.APP.URL_API;
-    return `${link}?token=${token}&redirect=${redirect}`;
+    return session.get('token') || '';
   },
 
   linkToAuthFacebook: function() {
-    var link = config.APP.URL_AUTH_FACEBOOK;
-    return this._linkToAuth(link);
+    var token = this._extractToken();
+    return LinkTo.authFacebook(token);
   }.property('session.token'),
 
   linkToAuthTwitter: function() {
-    var link = config.APP.URL_AUTH_TWITTER;
-    return this._linkToAuth(link);
+    var token = this._extractToken();
+    return LinkTo.authTwitter(token);
   }.property('session.token'),
+
+  loadUserInformations() {
+    var URL = LinkTo.userInformations()
+    Ember
+      .$.get(URL)
+      .success((res) => this.get('session').set('user', res.user));
+  },
 
   checkForToken: function () {
     this._reSetToken();
     var session = this.get('session');
     var token = this.get('token');
 
-    session.authenticate('authenticator:custom', token)
-      .then(null, (error) => this.set('errorMessage', error.error));
-  }.observes('token')
+    session.authenticate('authenticator:custom', {token, session});
+    session.on('sessionAuthenticationSucceeded', this.loadUserInformations.bind(this));
+
+  }.observes('token'),
 });

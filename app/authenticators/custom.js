@@ -1,5 +1,6 @@
 import Ember from 'ember';
 import Base from 'simple-auth/authenticators/base';
+import LinkTo from '../utils/server-link';
 
 export default Base.extend({
 
@@ -10,18 +11,32 @@ export default Base.extend({
       xhr.setRequestHeader('token', token);
     };
 
-    return function () {
+    return function (data) {
       Ember.$.ajaxSetup(config);
     };
   },
 
-  authenticate: function(token = '') {
-    return Ember.$.ajax({
+  _setupSession(session) {
+    return (data) => {
+      this._session.set('user', data.user);
+    }
+  },
+
+  authenticate: function(options) {
+    var {token, session} = options;
+    var url = LinkTo.checkAuth(token)
+    this._session = session;
+
+    var isAuthenticated = Ember.$.ajax({
       type: 'POST',
-      url: `/api/auth/status?token=${token}`,
+      url: url,
       contentType: 'application/json',
       dataType: 'json',
-    })
-      .success(this._setupAjax(token));
+    });
+
+    isAuthenticated.success(this._setupAjax(token));
+    isAuthenticated.success(this._setupSession(session));
+
+    return isAuthenticated;
   }
 });

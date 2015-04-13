@@ -42,15 +42,28 @@ module.exports = function(app) {
     var fb = isAuthFacebook(token);
     var tw = isAuthTwitter(token);
 
-    if(fb === false || tw === false) {
+    // NOTE : change to node node whay to detected development
+    /*if(fb === false || tw === false) {
       res.status(401);
-    }
+    }*/
 
     res.send({
       token: token,
       isAuthenticated: true,
       isAuthFacebook: fb,
-      isAuthTwitter: tw,
+      isAuthTwitter: tw
+    });
+  });
+
+  route.get('/user', function(req, res) {
+    res.send({
+      user: {
+        tweets: '101',
+        following: '110',
+        follower: '260',
+        profile_image: 'http://localhost:4200/images/mock.jpg',
+        name: 'Mateus Vahl'
+      }
     });
   });
 
