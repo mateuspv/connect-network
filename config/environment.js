@@ -12,6 +12,17 @@ module.exports = function(environment) {
         // e.g. 'with-controller': true
       }
     },
+    contentSecurityPolicy: {
+      'Access-Control-Allow-Headers': '*',
+      'default-src': "'unsafe-inline'",
+      'script-src': "'self'",
+      'font-src': "'self' http://fonts.googleapis.com:* http://fonts.gstatic.com:*",
+      'style-src': "'self' http://fonts.googleapis.com:*",
+      'connect-src': "'self'",
+      'img-src': "'self' https://pbs.twimg.com:* https://fbcdn-sphotos-d-a.akamaihd.net:*",
+      'media-src': "'self'",
+      'frame-src': "http://www.youtube.com"
+    }
 
     'simple-auth': {
       routeAfterAuthentication: 'posts.index',
