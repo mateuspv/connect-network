@@ -53,7 +53,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-    ENV.APP.URL_API = 'https://connect-network-server.herokuapp.com';
+    ENV.APP.URL_API = 'https://connect-server.herokuapp.com';
     ENV.APP.URL_AUTH_STATUS = ENV.APP.URL_API + '/api/auth/status';
     ENV.APP.URL_AUTH_FACEBOOK = ENV.APP.URL_API + '/api/auth/facebook';
     ENV.APP.URL_AUTH_TWITTER = ENV.APP.URL_API + '/api/auth/twitter';
