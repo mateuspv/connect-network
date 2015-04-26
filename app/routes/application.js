@@ -3,7 +3,11 @@ import ApplicationRouteMixin from 'simple-auth/mixins/application-route-mixin';
 
 export default Ember.Route.extend(ApplicationRouteMixin, {
   actions: {
-    logout: function() {
+    toggleSidebar() {
+      debugger;
+    },
+
+    logout() {
       this.get('session').invalidate();
     }
   }

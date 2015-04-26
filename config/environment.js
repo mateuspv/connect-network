@@ -19,10 +19,10 @@ module.exports = function(environment) {
       'font-src': "'self' http://fonts.googleapis.com:* http://fonts.gstatic.com:*",
       'style-src': "'self' http://fonts.googleapis.com:*",
       'connect-src': "'self'",
-      'img-src': "'self' https://pbs.twimg.com:* https://fbcdn-sphotos-d-a.akamaihd.net:*",
+      'img-src': "'self' https://pbs.twimg.com:* http://pbs.twimg.com:* https://fbstatic-a.akamaihd.net:* https://fbcdn-sphotos-d-a.akamaihd.net:* http://graph.facebook.com:*",
       'media-src': "'self'",
       'frame-src': "http://www.youtube.com"
-    }
+    },
 
     'simple-auth': {
       routeAfterAuthentication: 'posts.index',

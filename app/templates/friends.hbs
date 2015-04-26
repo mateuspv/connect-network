@@ -1,0 +1,12 @@
+<ul class="timeline">
+	{{#each friend in model}}
+		<li>
+			{{#link-to 'profiles' friend.network friend.id class="post-user-image-container"}}
+				<img {{bind-attr src=friend.user_image}} class="post-user-image">
+		  	{{/link-to}}
+			<img class="post-network" src="svg/{{unbound friend.network}}.svg" alt="">
+			{{#link-to 'profiles' friend.network friend.id}}{{friend.name}}{{/link-to}}
+		</li>
+	{{/each}}
+	{{outlet}}
+</ul>

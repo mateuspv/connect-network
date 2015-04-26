@@ -1,66 +1,32 @@
-$btn-connect
-  display inline-block
-  padding 15px 20px
-  text-align center
-  text-decoration none
-  border-radius 5px
-  font-size 17.5px
-  color #FFF
-  box-shadow 1px 1px 50px -2px #000
-
-.btn-connect
-  span(1/2)
-  &-twitter
-    @extend $btn-connect
-    background-image linear-gradient(0deg, #60C5E8, #4BB5E2)
-    border 1px solid #3B86A5
-    &:hover
-      background #4BB5E2
-  &-facebook
-    @extend $btn-connect
-    background-image linear-gradient(0deg, #4364A6, #344F8E)
-    border 1px solid #2C4375
-    &:hover
-      background #344F8E
-
-.page-login,
-.page-index.no-auth
+.no-auth-image,
+.no-auth-overlayer
+  position absolute
+  left 0
+  top 0
+  width 100%
   height 100%
-  z-index -1
-  background url('../images/background-home.jpg') no-repeat center 55px fixed
-  background-size cover
-  color #FFF
 
+.no-auth-image
+  z-index 1
+  background url('../images/background-home.jpg') no-repeat center fixed
 
-.about
-  &-plataform
-    font-size 29px
-    padding 40px
-    +above(539px)
-      width 50%
+.no-auth-overlayer
+  z-index 2
+  background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAEUlEQVQIW2NgYGD4z4AE/gMADwMB/3hb+igAAAAASUVORK5CYII=') center center fixed rgba(0, 0, 0, 0.5)
+
+.page
+  &-container
+    center(780px, pad = 30px)
+    padding-top 30px;
+    position relative
+    z-index 3
+    color #FFF
 
   &-title
-    font-size 2em
-    font-family 'arial', sans-serif
-    text-shadow 2px 4px 5px #333
+    font-size 8vh
 
   &-text
-    font-size 0.7em
-    color #FFF
-    text-shadow 0px 1px 1px #333
-    line-height 1.2
-    margin-bottom 20px
+    width 80%
+    font-size 5vh
+    margin-bottom 35px
 
-  .mark-tw,
-  .mark-fb,
-  .mark-yet
-    font-weight bold
-
-  .mark-tw
-    color #60c5e8
-
-  .mark-fb
-    color #4364a6
-
-  .mark-yet
-    text-shadow 0px 1px 1px #000

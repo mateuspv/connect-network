@@ -13,10 +13,15 @@ $btn
   border 1px solid #FFF
   border-radius 100%
 
+.no-auth
+  .header-logo
+    +below(700px)
+      margin-left 5%
+
 .header
     position fixed
     top 0
-    z-index 3
+    z-index 4
     width 100%
     height 62px
     border-bottom 2px solid #CDD0D3
@@ -29,16 +34,19 @@ $btn
     &.twitter
       background-color $color-twitter
 
+    &-user-options
+      float right
+
     &-button
       @extend $btn
-      position absolute
-      top 12px
       display block
+      float left
+      margin-top 11px
       &.type-menu
         +above($desktop)
           display none
-      &.type-search
-        right 5%
+      &.type-friends
+        margin-right 12px
 
     .icon-profile
       position relative
