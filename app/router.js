@@ -15,8 +15,10 @@ export default Router.map(function() {
     this.route('new');
   });
 
+  this.resource('profiles', {path: 'profiles/:network/:id'}, function() {
+  });
+
   this.route('login', {path: '/'});
-  this.resource('profiles', {path: '/:network/:id'}, function() {});
   this.resource('friends', function() {});
   this.route('about');
   this.route('security');

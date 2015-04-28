@@ -1,1 +1,47 @@
-{{outlet}}
+{{#each model as |person|}}
+  <div class="profile">
+    <div style="{{profile-banner person.profile_banner_url}}" class="profile-cover"></div>
+    <div class="profile-user">
+      <img class="profile-user-image" {{bind-attr src=person.user_image}} alt="">
+      <h1 class="profile-user-name">{{person.name}}</h1>
+      {{#if person.description}}
+        <p class="profile-user-description">{{person.description}}</p>
+      {{/if}}
+      <ul class="profile-info">
+        {{#if person.posts_total}}
+          <li class="profile-info-item">
+            <div class="profile-info-item-container">
+              <p class="profile-info-title">tweets</p>
+              <p class="profile-info-value">{{person.posts_total}}</p>
+            </div>
+           </li>
+        {{/if}}
+        {{#if person.friends_count}}
+          <li class="profile-info-item">
+            <div class="profile-info-item-container">
+              <p class="profile-info-title">following</p>
+              <p class="profile-info-value">{{person.friends_count}}</p>
+            </div>
+          </li>
+        {{/if}}
+        {{#if person.followers_count}}
+          <li class="profile-info-item">
+            <div class="profile-info-item-container">
+              <p class="profile-info-title">followers</p>
+              <p class="profile-info-value">{{person.followers_count}}</p>
+            </div>
+          </li>
+        {{/if}}
+      </ul>
+      <a {{bind-attr class=":profile-btn person.network"}} rel="external" target="_blank">{{person.network}}</a>
+    </div>
+    <ul class="timeline">
+    {{#each person.posts as |post|}}
+      <li>
+        {{post-index post=post}}
+      </li>
+    {{/each}}
+    </ul>
+    {{outlet}}
+  </div>
+{{/each}}
