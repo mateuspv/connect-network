@@ -1,5 +1,6 @@
 {{#link-to 'friends'}}friends{{/link-to}}
-{{#each post in model}}
+
+{{#each model as |post|}}
   {{post-index post=post}}
 {{/each}}
 {{outlet}}

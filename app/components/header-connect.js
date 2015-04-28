@@ -7,7 +7,7 @@ export default Ember.Component.extend({
   }.property('session.isAuthenticated'),
 
   actions: {
-    toggleSidebar() {
+    hambugerNavegation() {
       this.sendAction('toggleSidebar');
     }
   }

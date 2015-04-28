@@ -2,7 +2,7 @@ import DS from 'ember-data';
 import config from '../config/environment';
 
 export default DS.RESTAdapter.extend({
-  namespace: 'api',
+  namespace: 'api/connect',
   host: config.APP.URL_API,
 
   pathForType(type) {
