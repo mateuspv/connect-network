@@ -1,8 +1,6 @@
 <ul class="timeline">
-  {{#each post in model}}
-    <li>
-      {{post-index post=post}}
-    </li>
+  {{#each model as |post|}}
+    {{post.id}}
   {{/each}}
 </ul>
 {{outlet}}
