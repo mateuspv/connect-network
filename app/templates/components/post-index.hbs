@@ -1,11 +1,11 @@
 <div class="post">
-  {{#link-to 'profiles' post.network post.id class="post-user-image-container"}}
+  {{#link-to 'profiles' post.network post.from_id class="post-user-image-container"}}
     <img {{bind-attr src=post.user_image}} class="post-user-image">
   {{/link-to}}
 
   <div class="post-content">
     <div class="post-user">
-      {{#link-to 'profiles' post.network post.id class="post-user-name"}}
+      {{#link-to 'profiles' post.network post.from_id class="post-user-name"}}
         {{post.from}}
         <span class="post-user-twitter">{{post.from_nick}}</span>
       {{/link-to}}
