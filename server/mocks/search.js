@@ -8,5 +8,5 @@ module.exports = function(app) {
     });
   });
 
-  app.use('/api/search', searchRouter);
+  app.use('/api/connect/search', searchRouter);
 };
