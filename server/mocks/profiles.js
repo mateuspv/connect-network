@@ -43,5 +43,5 @@ module.exports = function(app) {
   });
 
 
-  app.use('/api/profiles', profilesRouter);
+  app.use('/api/connect/profiles', profilesRouter);
 };
