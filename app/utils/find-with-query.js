@@ -6,11 +6,8 @@ export default function(store, type, query) {
   var ajaxPromise = adapter.ajax(url, 'GET', { data: query });
 
   return ajaxPromise.then(function(rawPayload) {
-    debugger;
     var extractedPayload = serializer.extract(store, typeClass, rawPayload, null, 'find');
-    debugger;
     store.push(typeClass, extractedPayload);
-    debugger;
     return rawPayload.search;
   });
 }
