@@ -7,11 +7,20 @@
         button.header-input__submit
     button.header-menu__btn
  */
-$btn
+
+$header-height = 62px
+
+$header-btn
+  display block
   width 38px
   height 38px
   border 1px solid #FFF
   border-radius 100%
+
+$header-animation
+  will-change background-color, border-color
+  transition border-color 200ms linear
+  transition background-color 500ms linear
 
 .no-auth
   .header-logo
@@ -19,148 +28,76 @@ $btn
       margin-left 5%
 
 .header
-    position fixed
-    top 0
-    z-index 4
-    width 100%
-    height 62px
-    border-bottom 2px solid #CDD0D3
-    background-color #1E88E2
-    transition background-color 500ms linear
+ .icon-search
+    margin-left 9px
+    margin-top 7px
+    
 
-    &.facebook
-      background-color $color-facebook
+.header
+  @extend $header-animation
+  position fixed
+  top 0
+  z-index 4
+  width 100%
+  height 62px
+  border-bottom 4px solid #1E72E2
+  background-color $color-connect-dark
 
-    &.twitter
-      background-color $color-twitter
+  &-container
+    position relative
+    margin 0 auto
+    height 100%
 
-    &-user-options
-      float right
+    +above($min-width)
+      padding-left 5%
+      padding-right 5%
 
-    &-button
-      @extend $btn
-      display block
-      float left
-      margin-top 11px
-      &.type-menu
-        +above($desktop)
-          display none
-      &.type-friends
-        margin-right 12px
+  &.facebook
+    background-color $color-facebook
+    border-color $color-facebook-dark
 
-    .icon-profile
-      position relative
-      top 4px
+  &.twitter
+    background-color $color-twitter
+    border-color $color-twitter-dark
 
-    .icon-search
-       margin-left 9px
-       margin-top 7px
-
-    &-container
-        position relative
-        margin 0 auto
-        height 100%
-
-        +above($min-width)
-            padding-left 5%
-            padding-right 5%
-
-    &-logo
-      width 147px
-      position absolute
-      left 0
-      right 0
-      margin 0 auto
-      display block
-      padding-top 21px
-
-    &-menu-btn
-        position absolute
-        top 11px
-        padding 7px 14px
-        border-radius 6px
-        cursor pointer
-        border 1px solid #2174b8
-        background-image linear-gradient( 0deg, #1e88e2 0%, #2174b8 100% )
-        box-shadow inset 0px 1px 0px 0px rgba(255,255,255,0.2)
-
-        &:focus
-            box-shadow 1px 1px 10px rgba(255,255,255,0.2)
-            background-color #2174b8
-
-        &.profile
-            left 5%
-
-        +above($tablet)
-            display none
-
-    &-input
-        display none
-        position absolute
-        right 0
-        left 0
-        margin 15px auto 0 auto
-        height 31px
-        border-radius 3px
-        border 1px solid #CCCCCC
-        background-color #FFFFFF
-        color #CACACA
-
-        +above($tablet)
-            display block
-            width 50%
-
-    &-input-input
-        float left
-        min-width 70%
-        height 100%
-        text-indent 12px
-        border none
-
-        +placeholder()
-            color #CACACA
-
-    &-input-submit
-        position relative
-        float right
-        width 91px
-        height 100%
-        border-left 1px solid #CACBCC
-
-        .icon-search
-            top 4px
-            left 35px
-            position absolute
-
-.nav
-  &-header
+  &-user-options
     float right
-    .icon-home,
-    .icon-notifications
-      float left
-      margin-right 9px
-      margin-top 19px
 
-  &-item
+  &-button
+    @extend $header-btn
     float left
-    line-height 62px
-    text-align center
-    padding-right 20px
+    margin-top 11px
+    &.type-menu
+      +above($desktop)
+        display none
+    &.type-friends
+      margin-right 12px
+ 
+  &-logo
+    width 147px
+    position absolute
+    left 0
+    right 0
+    margin 0 auto
+    display block
+    padding-top 21px
 
-    &:last-child
-      padding-right 0
+  &-menu-btn
+    position absolute
+    top 11px
+    padding 7px 14px
+    border-radius 6px
+    cursor pointer
+    border 1px solid #2174b8
+    background-image linear-gradient( 0deg, #1e88e2 0%, #2174b8 100% )
+    box-shadow inset 0px 1px 0px 0px rgba(255,255,255,0.2)
 
-    &-logo
-      padding-top 20px
-      float left
-      margin-right 18px
+    &:focus
+      box-shadow 1px 1px 10px rgba(255,255,255,0.2)
+      background-color #2174b8
 
-  &-link
-    font-size 11px
-    text-transform uppercase
-    letter-spacing 0.1em
-    color #FFF
-    font-family 'lato', sans-serif
+    &.profile
+        left 5%
 
-    &:hover
-      text-shadow 0px 1px 1px #333
+    +above($tablet)
+      display none

@@ -1,5 +1,4 @@
-.no-auth-image,
-.no-auth-overlayer
+$absolute-background
   position absolute
   left 0
   top 0
@@ -7,11 +6,13 @@
   height 100%
 
 .no-auth-image
+  @extend $absolute-background
   z-index 1
   background url('../images/background-home-2.jpg') no-repeat center 0 fixed
   background-size cover
 
 .no-auth-overlayer
+  @extend $absolute-background
   z-index 2
   background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAEUlEQVQIW2NgYGD4z4AE/gMADwMB/3hb+igAAAAASUVORK5CYII=') center center fixed rgba(0, 0, 0, 0.5)
 

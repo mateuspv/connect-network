@@ -33,7 +33,7 @@
           </li>
         {{/if}}
       </ul>
-      <a {{bind-attr class=":profile-btn person.network"}} rel="external" target="_blank">{{person.network}}</a>
+      <a {{bind-attr class=":profile-btn person.network" href=person.link}} rel="external" target="_blank">{{person.network}}</a>
     </div>
     <ul class="timeline">
     {{#each person.posts as |post|}}

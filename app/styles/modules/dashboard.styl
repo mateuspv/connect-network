@@ -1,3 +1,58 @@
+
+.sidebar
+  &-container
+    position fixed
+    z-index 2
+    top 62px
+    left -260px
+    width 260px
+    height 100%
+    color #FFF
+    background #f2f6f9
+    border-right 1px solid #e1e8ed
+    transition left 0.3s ease-in-out
+
+    .profile-card
+      border-bottom 1px solid $light-silver
+
+    .twitter-info
+      margin-bottom 5px
+      border-bottom 1px solid $light-silver
+
+    &::after
+      display none
+
+    +above($desktop)
+      left 0
+
+.site
+  &-container
+    padding-top 62px
+    height 100%
+    width 100%
+    transition-property transform
+    transition-duration 0.4s
+    &.active
+      overflow hidden
+      .site-main-container
+        transform translate3d(261px, 0, 0)
+      .sidebar-container
+        left 0
+        visibility visible
+
+  &-main-container
+    float right
+    width 100%
+    height 100%
+    overflow auto
+    transition-property top, bottom
+    transition-duration 0.2s, 0.2s
+    transition-timing-function linear, linear
+    overflow-scrolling touch
+    transition all 0.5s
+    background-color #FFF
+
+
 .dashboard
   hr
     background-color #e1e8ed

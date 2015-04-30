@@ -9,7 +9,7 @@
         {{post.from}}
         <span class="post-user-twitter">{{post.from_nick}}</span>
       {{/link-to}}
-      <a class="post-time-ago">- Implement time-ago -</a>
+      <a class="post-time-ago">{{from-now post.created_at}}</a>
       {{#if post.to}}
         <a class="post-to" href="#">to {{post.to}}</a>
       {{/if}}
@@ -24,36 +24,33 @@
     {{#if post.image}}
       <img {{bind-attr src=post.image}} class="post-media-image">
     {{/if}}
+    {{#if post.video}}
+      {{!-- <iframe frameborder="0" {{bind-attr src=post.video}}></iframe> --}}
+    {{/if}}
   </div>
   <ul {{bind-attr class=":post-actions post.network"}}>
-    <li class="post-actions-item">
-      {{#if this.isFacebook}}
-        <button {{action "like"}}>{{post.likes_count}} likes</button>
-      {{/if}}
-      {{#if isTwitter}}
+    {{#if isFacebook}}
+      <li class="post-actions-item">
+        <button {{bind-attr class="post.user_likes:liked"}} {{action "like"}}>like</button>
+      </li>
+      <li class="post-actions-item">
+        {{#link-to "posts.post" post.network post.id class="post-text-container"}}commnet{{/link-to}}
+      </li>
+    {{/if}}
+
+    {{#if isTwitter}}
+      <li>
         <div class="icon-retweet"></div>
         <p class="post-retweet-count">{{post.shares_count}}</p>
-      {{/if}}
-    </li>
-    <li class="post-actions-item">
-      {{#if isFacebook}}
-        <button>{{post.shares_count}} shares</button>
-      {{/if}}
-      {{#if isTwitter}}
+      </li>
+      <li class="post-actions-item">
         <div {{bind-attr class=":icon-favorite post.user_likes"}}></div>
         <p class="post-favorite-count">{{post.likes_count}}</p>
-      {{/if}}
-    </li>
-    <li class="post-actions-item">
-      {{#link-to "posts.post" post.network post.id class="post-text-container"}}
-        {{#if isFacebook}}
-          comment
-        {{/if}}
-        {{#if isTwitter}}
-          <div class="icon-reply"></div>
-        {{/if}}
-      {{/link-to}}
-    </li>
+      </li>
+      <li class="post-actions-item">
+        <div class="icon-reply"></div>
+      </li>
+    {{/if}}
   </ul>
   {{yield}}
 </div>

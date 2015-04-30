@@ -23,7 +23,7 @@ export default Ember.Object.create({
   loadUserInformations() {
     var URL = LinkTo.userInformations();
     var realSession = this.get('session');
-
+    debugger;
     return Ember
       .$.get(URL)
       .success((res) => realSession.set('user', res.user));

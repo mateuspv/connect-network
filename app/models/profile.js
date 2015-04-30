@@ -6,6 +6,7 @@ export default DS.Model.extend({
   name: DS.attr('string'),
   user_image: DS.attr('string'),
   description: DS.attr('string'),
+  link: DS.attr('string'),
   posts_total: DS.attr('string'),
   followers_count: DS.attr('string'),
   friends_count: DS.attr('string'),
