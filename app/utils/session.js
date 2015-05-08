@@ -30,6 +30,7 @@ export default Ember.Object.create({
     return Ember
       .$.get(URL)
         .always((res) => {
+          console.log('\n\n\n\n res:::', res)
           this._setData(res.user);
         });
   },
