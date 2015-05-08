@@ -14,11 +14,8 @@ export default Base.extend({
 
     return function (data) {
       Ember.$.ajaxSetup(config);
+      return data;
     };
-  },
-
-  _setupSession(data) {
-    Session.set('user', data.user);
   },
 
   authenticate: function(token) {
@@ -35,8 +32,11 @@ export default Base.extend({
       dataType: 'json',
     });
 
-    isAuthenticated.success(this._setupAjax(token));
-    isAuthenticated.success(this._setupSession);
+    isAuthenticated
+      .success(this._setupAjax(token))
+      .success(function () {
+        Session.loadUserInformations();
+      });
 
     return isAuthenticated;
   }
