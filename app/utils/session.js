@@ -27,6 +27,7 @@ export default Ember.Object.create({
     }
 
     let URL = LinkTo.userInformations();
+
     return Ember
       .$.get(URL)
         .always((res) => {
