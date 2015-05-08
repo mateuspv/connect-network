@@ -57,13 +57,11 @@ module.exports = function(app) {
 
   route.get('/user', function(req, res) {
     res.send({
-      user: {
-        tweets: '101',
-        following: '110',
-        follower: '260',
-        profile_image: 'http://localhost:4200/images/mock.jpg',
-        name: 'Mateus Vahl'
-      }
+      tweets: '101',
+      following: '110',
+      follower: '260',
+      profile_image: 'http://localhost:4200/images/mock.jpg',
+      name: 'Mateus Vahl'
     });
   });
 
