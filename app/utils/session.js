@@ -48,8 +48,9 @@ export default Ember.Object.create({
   },
 
   _setData(data) {
-    debugger;
     var realSession = this.get('session');
+    debugger;
+    console.log('setting::::', data);
     return realSession.set('user', data);
   }
 });
