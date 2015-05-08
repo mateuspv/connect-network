@@ -12,10 +12,7 @@ export default Base.extend({
       xhr.setRequestHeader('token', token);
     };
 
-    return function (data) {
-      Ember.$.ajaxSetup(config);
-      return data;
-    };
+    return Ember.$.ajaxSetup(config);
   },
 
   authenticate: function(token) {
@@ -23,9 +20,10 @@ export default Base.extend({
       return;
     }
 
-    var url = LinkTo.checkAuth(token);
+    let url = LinkTo.checkAuth(token);
+    this._setupAjax(token);
 
-    var isAuthenticated = Ember.$.ajax({
+    let isAuthenticated = Ember.$.ajax({
       type: 'POST',
       url: url,
       contentType: 'application/json',
@@ -33,11 +31,10 @@ export default Base.extend({
     });
 
     isAuthenticated
-      .success(this._setupAjax(token));
-
-    isAuthenticated.then(function (data) {
-      Session.loadUserInformations(data);
-    });
+      .always((data) => {
+        this._setupAjax(token);
+        Session.loadUserInformations(data.responseJSON);
+      });
 
     return isAuthenticated;
   }

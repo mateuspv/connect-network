@@ -21,6 +21,7 @@ export default Ember.Object.create({
   },
 
   loadUserInformations(data) {
+
     if(data) {
       return this._setData(data);
     }
@@ -28,7 +29,9 @@ export default Ember.Object.create({
     let URL = LinkTo.userInformations();
     return Ember
       .$.get(URL)
-      .success((res) => this._setData(res.user));
+        .always((res) => {
+          this._setData(res.user);
+        });
   },
 
   extractToken() {

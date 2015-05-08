@@ -5,13 +5,13 @@
   <h1 class="page-title">Welcome!</h1>
   <p class="page-text">Connect with your friends. Get in-the-moment updates on the things that interest you. And watch events unfold, in real time, from every angle.</p>
   <div class="btns-connect-container">
-  {{#unless session.isAuthFacebook}}
+  {{#unless session.user.isAuthFacebook}}
   <a {{bind-attr href=linkToAuthFacebook}} class="btn-authentication-facebook">
     <img class="btn-authentication-icon" src="svg/facebook.svg" alt="">
     facebook
   </a>
   {{/unless}}
-  {{#unless session.isAuthTwitter}}
+  {{#unless session.user.isAuthTwitter}}
   <a {{bind-attr href=linkToAuthTwitter}} class="btn-authentication-twitter">
     <img class="btn-authentication-icon" src="svg/twitter.svg" alt="">
     twitter
