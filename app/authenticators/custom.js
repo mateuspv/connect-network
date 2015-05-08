@@ -33,10 +33,11 @@ export default Base.extend({
     });
 
     isAuthenticated
-      .success(this._setupAjax(token))
-      .success(function () {
-        Session.loadUserInformations();
-      });
+      .success(this._setupAjax(token));
+
+    isAuthenticated.then(function (data) {
+      Session.loadUserInformations(data);
+    });
 
     return isAuthenticated;
   }

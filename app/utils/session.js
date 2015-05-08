@@ -20,12 +20,15 @@ export default Ember.Object.create({
     return session.authenticate('authenticator:custom', token);
   },
 
-  loadUserInformations() {
-    var URL = LinkTo.userInformations();
-    var realSession = this.get('session');
+  loadUserInformations(data) {
+    if(data) {
+      return this._setData(data);
+    }
+
+    let URL = LinkTo.userInformations();
     return Ember
       .$.get(URL)
-      .success((res) => realSession.set('user', res.user));
+      .success((res) => this._setData(res.user));
   },
 
   extractToken() {
@@ -39,5 +42,10 @@ export default Ember.Object.create({
     if(token && token !== this.get('token')) {
       session.set('token', token);
     }
+  },
+
+  _setData(data) {
+    var realSession = this.get('session');
+    return realSession.set('user', data);
   }
 });
