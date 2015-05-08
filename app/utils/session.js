@@ -21,7 +21,9 @@ export default Ember.Object.create({
   },
 
   loadUserInformations(data) {
+    console.log('data:::::', data)
     if(data) {
+      console.log('data-if:::::', data)
       return this._setData(data);
     }
 
@@ -30,7 +32,6 @@ export default Ember.Object.create({
     return Ember
       .$.get(URL)
         .always((res) => {
-          console.log('\n\n\n\n res:::', res)
           this._setData(res.user);
         });
   },
@@ -50,8 +51,6 @@ export default Ember.Object.create({
 
   _setData(data) {
     var realSession = this.get('session');
-    debugger;
-    console.log('setting::::', data);
     return realSession.set('user', data);
   }
 });
