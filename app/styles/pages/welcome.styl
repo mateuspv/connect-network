@@ -12,9 +12,9 @@ $absolute-background
   background-size cover
 
 .no-auth-overlayer
+  @extend $striped-background
   @extend $absolute-background
   z-index 2
-  background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAEUlEQVQIW2NgYGD4z4AE/gMADwMB/3hb+igAAAAASUVORK5CYII=') center center fixed rgba(0, 0, 0, 0.5)
 
 .page
   &-container

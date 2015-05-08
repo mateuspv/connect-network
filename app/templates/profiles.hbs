@@ -1,6 +1,7 @@
 {{#each model as |person|}}
   <div class="profile">
-    <div style="{{profile-banner person.profile_banner_url}}" class="profile-cover"></div>
+    <div style="{{profile-banner person.profile_banner_url}}" {{bind-attr class=":profile-cover person.network"}}></div>
+    <div class="profile-cover-overlayer"></div>
     <div class="profile-user">
       <div class="profile-user-information">
         <img class="profile-user-image" {{bind-attr src=person.user_image}} alt="">
