@@ -3,7 +3,7 @@ import Ember from 'ember';
 export default Ember.Component.extend({
   _isFrom(expected) {
     var post = this.get('post');
-    var network = post.get('network') || false;
+    var network = post.network || false;
 
     return network === expected ? true : false;
   },
