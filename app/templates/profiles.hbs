@@ -2,8 +2,11 @@
   <div class="profile">
     <div style="{{profile-banner person.profile_banner_url}}" class="profile-cover"></div>
     <div class="profile-user">
-      <img class="profile-user-image" {{bind-attr src=person.user_image}} alt="">
-      <h1 class="profile-user-name">{{person.name}}</h1>
+      <div class="profile-user-information">
+        <img class="profile-user-image" {{bind-attr src=person.user_image}} alt="">
+        <h1 class="profile-user-name">{{person.name}}</h1>
+        <a {{bind-attr class=":profile-btn person.network" href=person.link}} rel="external" target="_blank">{{person.network}}</a>
+      </div>
       {{#if person.description}}
         <p class="profile-user-description">{{person.description}}</p>
       {{/if}}
@@ -33,7 +36,6 @@
           </li>
         {{/if}}
       </ul>
-      <a {{bind-attr class=":profile-btn person.network" href=person.link}} rel="external" target="_blank">{{person.network}}</a>
     </div>
     <ul class="timeline">
     {{#each person.posts as |post|}}

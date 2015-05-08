@@ -22,6 +22,10 @@ export default Base.extend({
   },
 
   authenticate: function(token) {
+    if(!token) {
+      return;
+    }
+
     var url = LinkTo.checkAuth(token);
 
     var isAuthenticated = Ember.$.ajax({
