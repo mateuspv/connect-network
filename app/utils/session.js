@@ -21,9 +21,7 @@ export default Ember.Object.create({
   },
 
   loadUserInformations(data) {
-    console.log('data:::::', data)
     if(data) {
-      console.log('data-if:::::', data)
       return this._setData(data);
     }
 
@@ -32,6 +30,7 @@ export default Ember.Object.create({
     return Ember
       .$.get(URL)
         .always((res) => {
+          console.log(res, res.user);
           this._setData(res.user);
         });
   },
