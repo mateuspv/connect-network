@@ -1,4 +1,4 @@
-<div class="profile-card">
+<div class="profile-card" style="{{profile-banner user.profile_banner_url}}">
   <img class="profile-card-photo" {{bind-attr src=user.profile_image}}>
   <p class="profile-card-name">{{user.name}}</p>
   {{yield}}

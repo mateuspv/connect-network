@@ -61,7 +61,9 @@ module.exports = function(app) {
       following: '110',
       follower: '260',
       profile_image: 'http://localhost:4200/images/mock.jpg',
-      name: 'Mateus Vahl'
+      profile_banner_url: 'https://pbs.twimg.com/profile_banners/81441868/1420364701/600x200',
+      name: 'Mateus Vahl',
+      description: 'insert cool description here'
     });
   });
 

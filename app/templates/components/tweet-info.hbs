@@ -1,12 +1,15 @@
-<ul class="twitter-info">
-  <li class="twitter-info-item">
-    <p>tweets<span class="twitter-info-value">{{user.tweets}}</span></p>
-  </li>
-  <li class="twitter-info-item">
-    <p>followin<span class="twitter-info-value">{{user.following}}</span></p>
-  </li>
-  <li class="twitter-info-item">
-    <p>follower<span class="twitter-info-value">{{user.follower}}</span></p>
-  </li>
-  {{yield}}
-</ul>
+<div class="twitter-info">
+  <p class="twitter-info-description">{{user.description}}</p>
+  <ul class="twitter-info-list">
+    <li class="twitter-info-item">
+      <p>tweets<span class="twitter-info-value">{{user.tweets}}</span></p>
+    </li>
+    <li class="twitter-info-item">
+      <p>followin<span class="twitter-info-value">{{user.following}}</span></p>
+    </li>
+    <li class="twitter-info-item">
+      <p>follower<span class="twitter-info-value">{{user.follower}}</span></p>
+    </li>
+    {{yield}}
+  </ul>
+</div>
