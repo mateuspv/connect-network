@@ -14,4 +14,5 @@ export default DS.Model.extend({
   user_shares: DS.attr('string'),
   likes_count: DS.attr('string'),
   user_likes: DS.attr('string'),
+  link: DS.attr('string'),
 });

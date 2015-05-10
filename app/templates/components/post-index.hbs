@@ -13,6 +13,7 @@
       {{#if post.to}}
         <a class="post-to" href="#">to {{post.to}}</a>
       {{/if}}
+      <a href={{post.link}} target="_blank">see on {{post.network}}</a>
       <img class="post-network" src="svg/{{unbound post.network}}.svg" alt="">
     </div>
     {{#link-to "posts.post" post.network post.id class="post-text-container"}}

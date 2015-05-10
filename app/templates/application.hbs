@@ -2,8 +2,11 @@
   <div {{bind-attr class=":site-container isDashboardEnabled:active"}}>
     {{header-connect network=currentNetwork session=session toggleSidebar="toggleSidebar"}}
     {{#if session.isAuthenticated}}
-      {{dashboard-connect user=session.user}}
+      {{dashboard-connect user=session.user network=currentNetwork}}
     {{/if}}
-    {{outlet}}
+    <div class="site-main-container">
+      <div class="black-mask"></div>
+      {{outlet}}
+    </div>
   </div>
 </div>
