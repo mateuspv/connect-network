@@ -6,12 +6,10 @@
   background rgba(0,0,0,0.6)
 
 .sidebar
-  keep-border-color($color)
-
-    border-right 3px solid $color
-    .twitter-info
-      border-top 3px solid $color
-      border-bottom 3px solid $color
+  border-right 3px solid $color-connect
+  .twitter-info
+    border-top 3px solid $color-connect
+    border-bottom 3px solid $color-connect
 
   &-container
     position fixed
@@ -26,18 +24,10 @@
     transition left 0.3s ease-in-out
 
     .twitter-info
-      border-top 3px solid $color-connect-dark
-      border-bottom 3px solid $color-connect-dark
       margin-bottom 5px
 
     &::after
       display none
-
-    &.facebook
-      keep-border-color($color-facebook-dark)
-
-    &.twitter
-      keep-border-color($$color-twitter-dark)
 
     +above($desktop)
       left 0
@@ -99,3 +89,4 @@
 
     .tag-list-title
       padding-left 14px
+      padding-top 20px

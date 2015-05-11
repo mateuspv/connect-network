@@ -19,7 +19,7 @@ module.exports = function(environment) {
       'font-src': "'self' http://fonts.googleapis.com:* http://fonts.gstatic.com:*",
       'style-src': "'self' http://fonts.googleapis.com:*",
       'connect-src': "'self'",
-      'img-src': "'self' https://twitter.com:* https://pbs.twimg.com:* http://pbs.twimg.com:* https://fbstatic-a.akamaihd.net:* https://fbcdn-sphotos-d-a.akamaihd.net:* http://graph.facebook.com:*",
+      'img-src': "'self' https://twitter.com:* https://pbs.twimg.com:* http://pbs.twimg.com:* https://fbstatic-a.akamaihd.net:* https://fbcdn-sphotos-d-a.akamaihd.net:* http://graph.facebook.com:* https://scontent.xx.fbcdn.net:* https://fbcdn-vthumb-a.akamaihd.net:* https://fbexternal-a.akamaihd.net:* https://fbcdn-profile-a.akamaihd.net:*",
       'media-src': "'self'",
       'frame-src': "http://www.youtube.com"
     },

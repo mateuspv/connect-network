@@ -1,4 +1,4 @@
-<div {{bind-attr class="currentPage session.isAuthenticated:auth:no-auth"}}>
+<div {{bind-attr class="currentPage session.isAuthenticated:auth:no-auth currentNetwork"}}>
   <div {{bind-attr class=":site-container isDashboardEnabled:active"}}>
     {{header-connect network=currentNetwork session=session toggleSidebar="toggleSidebar"}}
     {{#if session.isAuthenticated}}

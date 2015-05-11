@@ -32,7 +32,7 @@
   <ul {{bind-attr class=":post-actions post.network"}}>
     {{#if isFacebook}}
       <li class="post-actions-item">
-        <button {{bind-attr class="post.user_likes:liked"}} {{action "like"}}>like</button>
+        <button {{bind-attr class="post.user_likes:liked"}} {{action "like"}}>{{likeText}}</button>
       </li>
       <li class="post-actions-item">
         {{#link-to "posts.post" post.network post.id class="post-text-container"}}commnet{{/link-to}}
@@ -40,12 +40,12 @@
     {{/if}}
 
     {{#if isTwitter}}
-      <li>
+      <li class="post-actions-item">
         <div class="icon-retweet"></div>
         <p class="post-retweet-count">{{post.shares_count}}</p>
       </li>
       <li class="post-actions-item">
-        <div {{bind-attr class=":icon-favorite post.user_likes"}}></div>
+        <div {{bind-attr class=":icon-favorite post.user_likes:active"}} {{action "like"}}></div>
         <p class="post-favorite-count">{{post.likes_count}}</p>
       </li>
       <li class="post-actions-item">

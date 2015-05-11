@@ -1,0 +1,108 @@
+/**
+  Theme
+*/
+
+/**
+  Helpers
+*/
+on-facebook()
+  .facebook
+    {block}
+
+on-twitter()
+  .twitter
+    {block}
+
+on-googleplus()
+  .googleplus
+    {block}
+
+
+/**
+  tag-button
+*/
+tag-button($color, $contrast)
+  color $color
+  background alpha($contrast, 0.2)
+  border-color alpha($contrast, 0.3)
+
++on-facebook()
+  .tag-button
+    tag-button($color-facebook, $color-facebook-dark)
+
++on-twitter()
+  .tag-button
+    tag-button($color-twitter, $color-twitter-dark)
+
++on-googleplus()
+  .tag-button
+    tag-button($color-googleplus, $color-googleplus-dark)
+
+/**
+  Header
+*/
++on-facebook()
+  .header
+    background-color $color-facebook
+    border-color $color-facebook-dark
+
++on-twitter()
+  .header
+    background-color $color-twitter
+    border-color $color-twitter-dark
+
++on-googleplus()
+  .header
+    background-color $color-googleplus
+    border-color $color-googleplus-dark
+
+
+/**
+  .twitter-info
+*/
++on-facebook()
+  .twitter-info
+    border-color $color-facebook
+
++on-twitter()
+  .twitter-info
+    border-color $color-twitter
+
++on-googleplus()
+  .twitter-info
+    border-color $color-googleplus
+
+/*
+  .sidebar-container
+*/
+
++on-facebook()
+  .sidebar-container
+    border-color $color-facebook
+
++on-twitter()
+  .sidebar-container
+    border-color $color-twitter
+
++on-googleplus()
+  .sidebar-container
+    border-color $color-googleplus
+
+
+/**
+  .profile-btn
+*/
++on-facebook()
+  .profile-btn
+    background $color-facebook
+    box-shadow 0 4px 0 $color-facebook-dark, 0 15px 20px rgba(0, 0, 0, 0.35)
+
++on-twitter()
+  .profile-btn
+    background $color-twitter
+    box-shadow 0 4px 0 $color-twitter-dark, 0 15px 20px rgba(0, 0, 0, 0.35)
+
++on-googleplus()
+  .profile-btn
+    background $color-googleplus
+    box-shadow 0 4px 0 $color-googleplus-dark, 0 15px 20px rgba(0, 0, 0, 0.35)

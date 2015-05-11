@@ -13,6 +13,6 @@ export default DS.Model.extend({
   shares_count: DS.attr('string'),
   user_shares: DS.attr('string'),
   likes_count: DS.attr('string'),
-  user_likes: DS.attr('string'),
+  user_likes: DS.attr('boolean'),
   link: DS.attr('string'),
 });

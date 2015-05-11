@@ -1,20 +1,27 @@
 /**
- * -------------------------
- *  Base: Variables & Declarations
- * -------------------------
+  variables & useful stuff
  */
 
 /**
   VARIABLES
 */
+
+/**
+  COLORS
+*/
 $blue = #1E88E2
 $light-blue = #b7d8f6
 $light-silver = #e1e8ed
 
+/**
+  COLORS - Social networks
+*/
 $color-twitter = #55acee
 $color-twitter-dark = #1D76AB
 $color-facebook = #3b5998
 $color-facebook-dark = #2B4170
+$color-googleplus = #d73d32
+$color-googleplus-dark = #E42214
 $color-connect = #1E88E2
 $color-connect-dark = #1E88E2
 
@@ -24,6 +31,9 @@ $desktop = 1164px
 $font-primary = 'Lato', sans-serif
 $font-size = 16px
 
+/**
+  Usefull
+*/
 $striped-background
   background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAEUlEQVQIW2NgYGD4z4AE/gMADwMB/3hb+igAAAAASUVORK5CYII=') center center fixed rgba(0, 0, 0, 0.5)
 
@@ -32,7 +42,9 @@ $profile-user-image
   border 3px solid #fff
   box-shadow 0 1px 1px rgba(0,0,0,0.3)
 
-
+/**
+  Helpers
+*/
 lateral-margin-auto()
   margin-left auto
   margin-right auto
@@ -75,10 +87,12 @@ $button
   width 90%
   text-align center
   border-radius 3px
-  border 1px solid #D0D3D5
-  color #737C82
   transition-duration 0.3s
   transition-property color, background-color
+  font-size 12px
+  border 1px solid 1px solid rgba(198, 219, 243, 0.2)
+  background rgba(30, 114, 226, 0.2)
+  color $color-connect
 
   &:first-letter
     text-transform uppercase

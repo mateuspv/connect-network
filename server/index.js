@@ -8,9 +8,12 @@
 // };
 
 module.exports = function(app) {
+  var bodyParser = require('body-parser');
   var globSync   = require('glob').sync;
   var mocks      = globSync('./mocks/**/*.js', { cwd: __dirname }).map(require);
   var proxies    = globSync('./proxies/**/*.js', { cwd: __dirname }).map(require);
+
+  app.use(bodyParser.json());
 
   // Log proxy requests
   var morgan  = require('morgan');
