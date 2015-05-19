@@ -3,5 +3,5 @@ import config from '../config/environment';
 
 export default ApplicationAdapter.extend({
   namespace: 'api/connect',
-  host: config.APP.URL_API
+  host: config.APP.URL_API,
 });

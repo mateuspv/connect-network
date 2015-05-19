@@ -1,3 +1,10 @@
 <ul class="timeline">
+  <form {{action "newPost" on="submit"}}>
+    {{input type="checkbox" name="isForTwitter" checked=isForTwitter}}
+    {{input type="checkbox" name="isForFacebook" checked=isForFacebook}}
+    <label>Message</label>
+    {{textarea value=message}}
+    <button>Submit</button>
+  </form>
 	{{outlet}}
 </ul>

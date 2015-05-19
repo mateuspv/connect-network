@@ -2,6 +2,7 @@ import DS from 'ember-data';
 
 export default DS.Model.extend({
   //comments: DS.hasMany('comment'),
+  changes: DS.attr('string'),
   user_image: DS.attr('string'),
   network: DS.attr('string'),
   video: DS.attr('string'),
