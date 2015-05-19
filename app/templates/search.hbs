@@ -1,6 +1,8 @@
 <form class="search" {{action "search" on="submit"}}>
   <label class="search-label" for="search">Type to search</label>
   {{input class="search-input" placeholder="Type to search" type="search" name="search" id="search" value=q autofocus="true"}}
-  <button>Search</button>
+  <div class="search-options-container">
+    <button class="search-submit">Search</button>
+  </div>
 </form>
 {{outlet}}

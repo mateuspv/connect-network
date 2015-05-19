@@ -140,3 +140,32 @@ $post-user-info
   &-location,
   &-time-ago
     @extend $post-other-infos
+
+
+.post-form
+  width 80%
+  margin 0 auto
+
+  &-textarea
+    width 100%
+    min-height 60px
+    margin 0 auto
+    display block
+    text-indent 5px
+    padding-top 5px
+    border 1px solid $color-connect
+    resize vertical
+    &:focus
+      outline none
+
+
+  &-options
+    float left
+
+  &-options-container
+    margin-top 10px
+
+  &-submit
+    @extend $submit-btn
+    float right
+

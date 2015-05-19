@@ -1,7 +1,8 @@
 import DS from 'ember-data';
+import ApplicationAdapter from './application';
 import config from '../config/environment';
 
-export default DS.RESTAdapter.extend({
+export default ApplicationAdapter.extend({
   namespace: 'api/connect',
   host: config.APP.URL_API,
 

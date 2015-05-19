@@ -1,10 +1,17 @@
 <ul class="timeline">
-  <form {{action "newPost" on="submit"}}>
-    {{input type="checkbox" name="isForTwitter" checked=isForTwitter}}
-    {{input type="checkbox" name="isForFacebook" checked=isForFacebook}}
-    <label>Message</label>
-    {{textarea value=message}}
-    <button>Submit</button>
+  <form {{action "newPost" on="submit"}} class="post-form">
+    <label>
+      {{textarea value=message placeholder="What's happening?" class="post-form-textarea"}}
+    </label>
+    <div class="post-form-options-container">
+      <div class="post-form-options">
+        <label>Twitter</label>
+        {{input type="checkbox" name="isForTwitter" checked=isForTwitter}}
+        <label>Facebook</label>
+        {{input type="checkbox" name="isForFacebook" checked=isForFacebook}}
+      </div>
+      <button class="post-form-submit">Submit</button>
+    </div>
   </form>
 	{{outlet}}
 </ul>

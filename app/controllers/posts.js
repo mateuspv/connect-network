@@ -1,6 +1,9 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
+  isForTwitter: true,
+  isForFacebook: true,
+
   createPost(message, network) {
     let post = this.store.createRecord('post', {
       message: message,

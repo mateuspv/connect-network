@@ -19,7 +19,13 @@ export default Ember.Component.extend({
 
   _isFrom(expected) {
     let post = this.get('post');
-    let network = post.get('network') || false;
+    let network;
+    try {
+      network = post.get('network');
+    }
+    catch(e) {
+      network = post.network || false;
+    }
 
     return network === expected ? true : false;
   },

@@ -1,11 +1,18 @@
 .search
   margin-top 50px
-  center(max_width = 350px)
+  center(max_width = 360px)
   +above($tablet)
     uncenter()
     margin-left 300px
+    max-width 50%
+
   &-label
     display none
+
+  &-submit
+    float right
+    margin-top 5px
+    @extend $submit-btn
 
   &-input
     width 92%
@@ -20,4 +27,3 @@
       outline none
       border-color #66AFE9
       border-bottom 1px solid #EEE
-
