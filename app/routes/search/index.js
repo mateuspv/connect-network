@@ -4,7 +4,8 @@ import AuthenticatedRouteMixin from 'simple-auth/mixins/authenticated-route-mixi
 export default Ember.Route.extend(AuthenticatedRouteMixin, {
 
   model(_, transition) {
-    var query = transition.queryParams.query;
-    return this.store.findWithQuery('search', {q: query});
+    let query = transition.queryParams.query;
+    let {network, type} = transition.queryParams;
+    return this.store.findWithQuery('search', {q: query, network: network, type: type});
   }
 });

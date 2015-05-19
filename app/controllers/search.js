@@ -3,11 +3,47 @@ import Ember from 'ember';
 export default Ember.Controller.extend({
   queryParams: ['query'],
   query: null,
+  isForTwitter: true,
+  isForFacebook: true,
+  mixed: true,
+  recent: false,
+  popular: false,
+  twitterUsers: false,
+  facebookUser: true,
+
+  isForNetworks() {
+    var network = [];
+    if(this.get('isForFacebook')) {
+      network.push('facebook');
+    }
+    if(this.get('isForTwitter')) {
+      network.push('twitter');
+    }
+    return network;
+  },
+
+  allTwitterTypes() {
+    let types = ['mixed', 'recent', 'popular', 'twitterUsers'];
+    return types.filter((type) => this.get(type));
+  },
+
+  allFacebookTypes() {
+    let types = ['facebookUser'];
+    return types.filter((type) => this.get(type));
+  },
+
+  allTypes() {
+    return [].concat(this.allFacebookTypes(), this.allTwitterTypes());
+  },
 
   transitionToSearch(query) {
+    let network = this.isForNetworks();
+    let type = this.allTypes();
     this.transitionToRoute('search.index', {
       queryParams: {
-        query: query
+        query: query,
+        network: network,
+        type: type
       }
     });
   },
