@@ -1,6 +1,9 @@
 <ul class="timeline">
-  {{#each model as |post|}}
-    {{post-index post=post}}
+  {{#each model.user_facebook as |user|}}
+    {{user-facebook user=user}}
+  {{/each}}
+  {{#each model.user_twitter as |user|}}
+    {{user-twitter user=user}}
   {{/each}}
 </ul>
 {{outlet}}

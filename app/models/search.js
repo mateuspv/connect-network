@@ -2,7 +2,7 @@ import DS from 'ember-data';
 
 export default DS.Model.extend({
   //comments: DS.hasMany('comment'),
-  changes: DS.attr('string'),
+  /*changes: DS.attr('string'),
   user_image: DS.attr('string'),
   network: DS.attr('string'),
   video: DS.attr('string'),
@@ -15,5 +15,7 @@ export default DS.Model.extend({
   user_shares: DS.attr('string'),
   likes_count: DS.attr('string'),
   user_likes: DS.attr('boolean'),
-  link: DS.attr('string'),
+  link: DS.attr('string'),*/
+  user_facebook: DS.hasMany('user-facebook', {async: false}),
+  user_twitter: DS.hasMany('user-twitter', {async: false}),
 });
