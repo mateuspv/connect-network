@@ -10,6 +10,7 @@ export default Ember.Controller.extend({
   popular: false,
   twitterUsers: false,
   facebookUser: true,
+  page: false,
 
   isForNetworks() {
     var network = [];
@@ -28,7 +29,7 @@ export default Ember.Controller.extend({
   },
 
   allFacebookTypes() {
-    let types = ['facebookUser'];
+    let types = ['facebookUser', 'page'];
     return types.filter((type) => this.get(type));
   },
 

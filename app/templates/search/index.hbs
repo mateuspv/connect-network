@@ -5,5 +5,8 @@
   {{#each model.user_twitter as |user|}}
     {{user-twitter user=user}}
   {{/each}}
+  {{#each model.page_facebook as |page|}}
+    {{page-facebook page=page}}
+  {{/each}}
 </ul>
 {{outlet}}
