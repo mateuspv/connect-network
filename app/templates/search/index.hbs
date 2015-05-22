@@ -1,15 +1,31 @@
 <ul class="timeline">
+  <h1>Users facebook</h1>
   {{#each model.user_facebook as |user|}}
     {{user-facebook user=user}}
   {{/each}}
+  <br>
+  <h1>Users Twitter</h1>
   {{#each model.user_twitter as |user|}}
     {{user-twitter user=user}}
   {{/each}}
+  <br>
+  <h1>Page facebook</h1>
   {{#each model.page_facebook as |page|}}
     {{page-facebook page=page}}
   {{/each}}
+  <br>
+  <h1>Group Facebook</h1>
   {{#each model.group_facebook as |group|}}
     {{group-facebook group=group}}
+  {{/each}}
+  <br>
+  <h1>Posts twitter</h1>
+  {{#each model.post_twitter as |post|}}
+    <p>user name: {{post.user.name}}</p>
+    <p>user img: {{post.user.image}}</p>
+    <p>message {{post.message}}</p>
+    {{post.created_at}}
+    <br>
   {{/each}}
 </ul>
 {{outlet}}

@@ -8,7 +8,7 @@ export default Ember.Controller.extend({
   mixed: true,
   recent: false,
   popular: false,
-  twitterUsers: false,
+  twitterUser: false,
   facebookUser: true,
   page: false,
   group: false,
@@ -25,7 +25,7 @@ export default Ember.Controller.extend({
   },
 
   allTwitterTypes() {
-    let types = ['mixed', 'recent', 'popular', 'twitterUsers'];
+    let types = ['mixed', 'recent', 'popular', 'twitterUser'];
     return types.filter((type) => this.get(type));
   },
 

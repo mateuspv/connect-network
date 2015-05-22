@@ -20,4 +20,5 @@ export default DS.Model.extend({
   user_twitter: DS.hasMany('user-twitter', {async: false}),
   page_facebook: DS.hasMany('page-facebook', {async: false}),
   group_facebook: DS.hasMany('group-facebook', {async: false}),
+  post_twitter: DS.hasMany('post-twitter', {async: false}),
 });
