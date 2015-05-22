@@ -18,5 +18,6 @@ export default DS.Model.extend({
   link: DS.attr('string'),*/
   user_facebook: DS.hasMany('user-facebook', {async: false}),
   user_twitter: DS.hasMany('user-twitter', {async: false}),
-  page_facebook:  DS.hasMany('page-facebook', {async: false}),
+  page_facebook: DS.hasMany('page-facebook', {async: false}),
+  group_facebook: DS.hasMany('group-facebook', {async: false}),
 });
