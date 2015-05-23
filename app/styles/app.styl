@@ -23,6 +23,7 @@ ks-support-ie = 8
 @import 'modules/timeline'
 @import 'modules/profile'
 @import 'modules/tags'
+@import 'modules/profile-user-card'
 @import 'modules/profile-card'
 @import 'modules/twitter-info'
 @import 'modules/loading-bar'
@@ -49,3 +50,12 @@ ks-support-ie = 8
  */
 @import 'vendor/rewrite'
 @import 'theme'
+
+.search-result
+  &-item
+    width 250px
+    margin 0 auto 30px auto
+    +above($desktop)
+      float left
+      &:nth-child(odd)
+        margin-right 80px

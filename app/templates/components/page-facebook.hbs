@@ -1,6 +1,17 @@
-{{#link-to 'profiles' 'facebook' page.id}}
-  {{page.name}}
-  {{page.about}}
-  {{page.link}}
-{{/link-to}}
-{{yield}}
+<div {{bind-attr class=":profile-card network"}} style={{profile-banner page.cover}}>
+  <div class="profile-card-overlayer"></div>
+  <div class="profile-card-container">
+    {{#link-to 'profiles' 'facebook' page.id}}
+      <img class="profile-card-photo" src={{page.image}}>
+      <p class="profile-card-name">{{page.name}}</p>
+      <p>{{page.about}}</p>
+      {{#if page.description}}
+        <p class="profile-card-description">{{page.description}}</p>
+      {{/if}}
+      <img class="profile-card-network" alt="facebook" src="svg/facebook.svg">
+    {{/link-to}}
+    <a {{bind-attr class=":profile-btn network" href=page.link}} rel="external" target="_blank">on {{network}}</a>
+  </div>
+  {{yield}}
+</div>
+

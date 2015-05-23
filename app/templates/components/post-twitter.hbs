@@ -1,0 +1,35 @@
+<div class="post">
+  {{#link-to "profiles" "twitter" post.user.id class="post-user-image-container"}}
+    <img src={{post.user.image}} class="post-user-image">
+  {{/link-to}}
+
+  <div class="post-content">
+    <div class="post-user">
+      {{#link-to "profiles" "twitter" post.user.id class="post-user-name"}}
+        {{post.user.name}}
+        <span class="post-user-twitter">{{post.user.screnname}}</span>
+      {{/link-to}}
+      <a class="post-time-ago">{{from-now post.created_at}}</a>
+      <a href={{post.link}} target="_blank">see on twitter</a>
+      <img class="post-network" src="svg/twitter.svg" alt="twitter">
+    </div>
+    {{#link-to "posts.post" post.network post.id class="post-text-container"}}
+      <p class="post-text">{{post.message}}</p>
+    {{/link-to}}
+  </div>
+
+  <ul {{bind-attr class=":post-actions post.network"}}>
+    <li class="post-actions-item">
+      <div {{bind-attr class=":icon-retweet post.retweeted:active"}}></div>
+      <p class="post-retweet-count">{{post.retweet_count}}</p>
+    </li>
+    <li class="post-actions-item">
+      <div {{bind-attr class=":icon-favorite post.favorited:active"}} {{action "like"}}></div>
+      <p class="post-favorite-count">{{post.favorite_count}}</p>
+    </li>
+    <li class="post-actions-item">
+      <div class="icon-reply"></div>
+    </li>
+  </ul>
+  {{yield}}
+</div>

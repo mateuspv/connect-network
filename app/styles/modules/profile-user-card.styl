@@ -1,0 +1,22 @@
+.profile-user-card
+  $profile-card-height = 68px
+  clearfix()
+  width 100%
+  padding 14px
+  background url("") no-repeat center center
+  background-size cover
+
+  &-photo
+    @extend $profile-user-image
+    box-sizing initial
+    float left
+    size 68px $profile-card-height
+
+
+  &-name
+    float left
+    margin-left 3px
+    size 140px $profile-card-height
+    font-size 20px
+    line-height $profile-card-height
+    text-shadow 1px 1px 1px rgba(0, 0, 0, 0.8)

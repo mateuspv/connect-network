@@ -1,31 +1,40 @@
-<ul class="timeline">
-  <h1>Users facebook</h1>
+<div class="timeline search-result">
+  <h1>Facebook Users</h1>
+  <ul>
   {{#each model.user_facebook as |user|}}
-    {{user-facebook user=user}}
+    <li class="search-result-user-facebook-item">{{profile-card user=user network="facebook" description=user.description}}</li>
   {{/each}}
-  <br>
+  </ul>
+
   <h1>Users Twitter</h1>
+  <ul>
   {{#each model.user_twitter as |user|}}
-    {{user-twitter user=user}}
+    <li class="search-result-user-facebook-item">{{profile-card user=user network="twitter" description=user.bio}}</li>
   {{/each}}
+  </ul>
   <br>
+
   <h1>Page facebook</h1>
+  <ul>
   {{#each model.page_facebook as |page|}}
-    {{page-facebook page=page}}
+    <li class="search-result-user-facebook-item">{{profile-card user=page network="facebook" description=user.about}}</li>
   {{/each}}
   <br>
+  </ul>
+
   <h1>Group Facebook</h1>
+  <ul>
   {{#each model.group_facebook as |group|}}
-    {{group-facebook group=group}}
+    <li class="search-result-user-facebook-item">{{group-facebook group=group}}</li>
   {{/each}}
+  </ul>
+
   <br>
   <h1>Posts twitter</h1>
+  <ul>
   {{#each model.post_twitter as |post|}}
-    <p>user name: {{post.user.name}}</p>
-    <p>user img: {{post.user.image}}</p>
-    <p>message {{post.message}}</p>
-    {{post.created_at}}
-    <br>
+    {{post-twitter post=post}}
   {{/each}}
-</ul>
+  </ul>
+</div>
 {{outlet}}

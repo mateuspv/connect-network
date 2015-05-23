@@ -1,5 +1,16 @@
-<div class="profile-card" style="{{profile-banner user.profile_banner_url}}">
-  <img class="profile-card-photo" {{bind-attr src=user.profile_image}}>
-  <p class="profile-card-name">{{user.name}}</p>
+<div {{bind-attr class=":profile-card network"}} style={{profile-banner user.cover}}>
+  <div class="profile-card-overlayer"></div>
+  <div class="profile-card-container">
+    {{#link-to 'profiles' network user.id page.id}}
+      <img class="profile-card-photo" src={{user.image}}>
+      <p class="profile-card-name">{{user.name}}</p>
+      {{#if user.screenname}}
+        <p class="profile-card-screenname">@{{user.screenname}}</p>
+      {{/if}}
+      <p class="profile-card-description">{{description}}</p>
+      <img class="profile-card-network" alt="facebook" src={{pathToIcon}}>
+    {{/link-to}}
+    <a {{bind-attr class=":profile-btn network" href=user.link}} rel="external" target="_blank">on {{network}}</a>
+  </div>
   {{yield}}
 </div>

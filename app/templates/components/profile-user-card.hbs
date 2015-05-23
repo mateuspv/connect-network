@@ -1,0 +1,5 @@
+<div class="profile-user-card" style="{{profile-banner user.profile_banner_url}}">
+  <img class="profile-user-card-photo" {{bind-attr src=user.profile_image}}>
+  <p class="profile-user-card-name">{{user.name}}</p>
+  {{yield}}
+</div>
