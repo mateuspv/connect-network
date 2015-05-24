@@ -10,7 +10,7 @@
         <span class="post-user-twitter">{{post.user.screnname}}</span>
       {{/link-to}}
       <a class="post-time-ago">{{from-now post.created_at}}</a>
-      <a href={{post.link}} target="_blank">see on twitter</a>
+      <a {{bind-attr href=post.link}} target="_blank">see on twitter</a>
       <img class="post-network" src="svg/twitter.svg" alt="twitter">
     </div>
     {{#link-to "posts.post" post.network post.id class="post-text-container"}}
@@ -31,5 +31,10 @@
       <div class="icon-reply"></div>
     </li>
   </ul>
+
+  {{#if shouldDisplayRetweet}}
+    {{post-twitter post=post.retweet}}
+  {{/if}}
+
   {{yield}}
 </div>

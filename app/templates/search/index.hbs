@@ -1,40 +1,23 @@
-<div class="timeline search-result">
-  <h1>Facebook Users</h1>
-  <ul>
-  {{#each model.user_facebook as |user|}}
-    <li class="search-result-user-facebook-item">{{profile-card user=user network="facebook" description=user.description}}</li>
-  {{/each}}
-  </ul>
-
-  <h1>Users Twitter</h1>
-  <ul>
-  {{#each model.user_twitter as |user|}}
-    <li class="search-result-user-facebook-item">{{profile-card user=user network="twitter" description=user.bio}}</li>
-  {{/each}}
-  </ul>
-  <br>
-
-  <h1>Page facebook</h1>
-  <ul>
-  {{#each model.page_facebook as |page|}}
-    <li class="search-result-user-facebook-item">{{profile-card user=page network="facebook" description=user.about}}</li>
-  {{/each}}
-  <br>
-  </ul>
-
-  <h1>Group Facebook</h1>
-  <ul>
-  {{#each model.group_facebook as |group|}}
-    <li class="search-result-user-facebook-item">{{group-facebook group=group}}</li>
-  {{/each}}
-  </ul>
-
-  <br>
-  <h1>Posts twitter</h1>
-  <ul>
-  {{#each model.post_twitter as |post|}}
-    {{post-twitter post=post}}
-  {{/each}}
-  </ul>
-</div>
+<form class="search" {{action "doSearch" on="submit"}}>
+  <label class="search-label" for="search">Type to search</label>
+  {{input class="search-input" placeholder="Type to search" type="search" name="search" id="search" value=q autofocus="true"}}
+  <div class="search-option-network">
+    <button {{bind-attr class=":search-option-network-button query.facebook:active"}} {{action "toggleProperty" "facebook"}}>Facebook</button>
+    {{#if query.facebook}}
+      <button {{bind-attr class=":search-option-network-button query.facebookUser:active"}} {{action "toggleProperty" "facebookUser"}}>users</button>
+      <button {{bind-attr class=":search-option-network-button query.page:active"}} {{action "toggleProperty" "page"}}>page</button>
+      <button {{bind-attr class=":search-option-network-button query.group:active"}} {{action "toggleProperty" "group"}}>group</button>
+    {{/if}}
+  </div>
+  <div class="search-option-network">
+    <button {{bind-attr class=":search-option-network-button query.twitter:active"}} {{action "toggleProperty" "twitter"}}>Twitter</button>
+    {{#if query.twitter}}
+      <button {{bind-attr class=":search-option-network-button query.twitterUser:active"}} {{action "toggleProperty" "twitterUser"}}>users</button>
+      <button {{bind-attr class=":search-option-network-button query.mixed:active"}} {{action "toggleProperty" "mixed"}}>mixed tweets</button>
+      <button {{bind-attr class=":search-option-network-button query.recent:active"}} {{action "toggleProperty" "recent"}}>recent tweets</button>
+      <button {{bind-attr class=":search-option-network-button query.popular:active"}} {{action "toggleProperty" "popular"}}>popular tweets</button>
+    {{/if}}
+  </div>
+  <button class="search-submit">Search!</button>
+</form>
 {{outlet}}

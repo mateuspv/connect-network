@@ -4,7 +4,7 @@
     {{#link-to 'profiles' "facebook" group.id}}
       <img class="group-facebook-network" alt="facebook" src="svg/facebook.svg">
       <p class="group-facebook-name">{{group.name}}</p>
-      <p class="group-facebook-description">{{group.description}}</p>
+      <p class="group-facebook-description">{{small-text group.description}}</p>
     {{/link-to}}
     <a {{bind-attr href=group.link}} class="profile-btn facebook" rel="external" target="_blank">on facebook</a>
     <img src={{group.icon}} class="group-facebook-icon">

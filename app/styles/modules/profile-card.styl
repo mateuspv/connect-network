@@ -2,7 +2,7 @@
   position relative
   min-height 110px
   padding-top 10px
-  padding-bottom 10px
+  padding-bottom 14px
   border-top-left-radius 3px
   border-top-right-radius 3px
   border-bottom 4px solid $color-connect
@@ -40,13 +40,13 @@
     text-shadow 1px 1px 1px rgba(0,0,0,0.8)
 
   &-overlayer
+    @extend $striped-background
     position absolute
     z-index 1
     size 100% 100%
     top 0
     border-top-left-radius 3px
     border-top-right-radius 3px
-    @extend $striped-background
 
   &-network
     lateral-absolute-center()
@@ -63,7 +63,7 @@
 
 .group-facebook
   @extend .profile-card
-  border-bottom-color $color-facebook-dar
+  border-bottom-color $color-facebook-dark
 
   &-network
     bottom 0

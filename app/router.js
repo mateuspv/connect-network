@@ -12,14 +12,16 @@ export default Router.map(function() {
   });
 
   this.resource('search', function () {
-    this.route('new');
+    this.route('result');
   });
 
   this.resource('profiles', {path: 'profiles/:network/:id'}, function() {
   });
 
+  this.resource('friends', function() {
+  });
+
   this.route('login', {path: '/'});
-  this.resource('friends', function() {});
   this.route('about');
   this.route('security');
 });
