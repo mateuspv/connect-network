@@ -1,27 +1,29 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-  isForTwitter: true,
-  isForFacebook: true,
+  twitter: true,
+  facebook: true,
 
   createPost(message, network) {
-    let post = this.store.createRecord('post', {
-      message: message,
-      network: network,
-    });
+    let post = this.store.createRecord('post', {message, network});
     post.save();
+  },
+
+  activedNetworks() {
+    let networks = ['twitter', 'facebook'];
+    return networks.filter((network) => this.get(network));
   },
 
   actions: {
     newPost() {
-      let isForTwitter = this.get('isForTwitter') ? 'twitter' : undefined;
-      let isForFacebook = this.get('isForFacebook') ? 'facebook' : undefined;
-      let allNetworks = [isForTwitter, isForFacebook];
+      let allNetworks = this.activedNetworks();
       let message = this.get('message');
 
       allNetworks
-        .filter(network => network)
         .map(network => this.createPost(message, network));
+    },
+    toggleNetworkState: function(network) {
+      this.toggleProperty(network);
     }
   }
 });

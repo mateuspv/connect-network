@@ -1,23 +1,26 @@
-<form class="search" {{action "doSearch" on="submit"}}>
-  <label class="search-label" for="search">Type to search</label>
-  {{input class="search-input" placeholder="Type to search" type="search" name="search" id="search" value=q autofocus="true"}}
-  <div class="search-option-network">
-    <button {{bind-attr class=":search-option-network-button query.facebook:active"}} {{action "toggleProperty" "facebook"}}>Facebook</button>
-    {{#if query.facebook}}
-      <button {{bind-attr class=":search-option-network-button query.facebookUser:active"}} {{action "toggleProperty" "facebookUser"}}>users</button>
-      <button {{bind-attr class=":search-option-network-button query.page:active"}} {{action "toggleProperty" "page"}}>page</button>
-      <button {{bind-attr class=":search-option-network-button query.group:active"}} {{action "toggleProperty" "group"}}>group</button>
-    {{/if}}
-  </div>
-  <div class="search-option-network">
-    <button {{bind-attr class=":search-option-network-button query.twitter:active"}} {{action "toggleProperty" "twitter"}}>Twitter</button>
-    {{#if query.twitter}}
-      <button {{bind-attr class=":search-option-network-button query.twitterUser:active"}} {{action "toggleProperty" "twitterUser"}}>users</button>
-      <button {{bind-attr class=":search-option-network-button query.mixed:active"}} {{action "toggleProperty" "mixed"}}>mixed tweets</button>
-      <button {{bind-attr class=":search-option-network-button query.recent:active"}} {{action "toggleProperty" "recent"}}>recent tweets</button>
-      <button {{bind-attr class=":search-option-network-button query.popular:active"}} {{action "toggleProperty" "popular"}}>popular tweets</button>
-    {{/if}}
-  </div>
-  <button class="search-submit">Search!</button>
-</form>
-{{outlet}}
+<div class="timeline">
+  <h1 class="page-title">Search</h1>
+  <form class="search" {{action "doSearch" on="submit"}}>
+    <label class="search-label" for="search">Type to search</label>
+    {{input class="search-input" placeholder="I'm looking for..." type="search" name="search" id="search" value=q autofocus="true"}}
+    <div class="search-option-network">
+      <button {{bind-attr class=":search-option-network-button query.facebook:active"}} {{action "toggleProperty" "facebook"}}>Facebook</button>
+      {{#if query.facebook}}
+        <button {{bind-attr class=":search-option-network-button query.facebookUser:active"}} {{action "toggleProperty" "facebookUser"}}>users</button>
+        <button {{bind-attr class=":search-option-network-button query.page:active"}} {{action "toggleProperty" "page"}}>page</button>
+        <button {{bind-attr class=":search-option-network-button query.group:active"}} {{action "toggleProperty" "group"}}>group</button>
+      {{/if}}
+    </div>
+    <div class="search-option-network">
+      <button {{bind-attr class=":search-option-network-button query.twitter:active"}} {{action "toggleProperty" "twitter"}}>Twitter</button>
+      {{#if query.twitter}}
+        <button {{bind-attr class=":search-option-network-button query.twitterUser:active"}} {{action "toggleProperty" "twitterUser"}}>users</button>
+        <button {{bind-attr class=":search-option-network-button query.mixed:active"}} {{action "toggleProperty" "mixed"}}>mixed tweets</button>
+        <button {{bind-attr class=":search-option-network-button query.recent:active"}} {{action "toggleProperty" "recent"}}>recent tweets</button>
+        <button {{bind-attr class=":search-option-network-button query.popular:active"}} {{action "toggleProperty" "popular"}}>popular tweets</button>
+      {{/if}}
+    </div>
+    <button class="search-submit">Search!</button>
+  </form>
+  {{outlet}}
+</div>

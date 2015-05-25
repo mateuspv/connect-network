@@ -143,18 +143,16 @@ $post-user-info
 
 
 .post-form
-  width 80%
-  margin 0 auto
-
   &-textarea
+    @extend $effect-input-focus
     width 100%
     min-height 60px
     margin 0 auto
     display block
     text-indent 5px
     padding-top 5px
-    border 1px solid $color-connect
     resize vertical
+    color rgba(0, 0, 0, 0.6)
     &:focus
       outline none
 
@@ -164,6 +162,12 @@ $post-user-info
 
   &-options-container
     margin-top 10px
+
+  &-button
+    @extend $button
+    float left
+    width auto
+    margin-right 10px
 
   &-submit
     @extend $submit-btn

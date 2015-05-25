@@ -7,17 +7,17 @@ import LinkTo from '../utils/server-link';
  * @todo real session lives in .session, always notify it, otherwise not will trigger others observables
  */
 export default Ember.Object.create({
-  init(session) {
+  setup(session) {
     this.session = session;
   },
 
+  listenToAuth() {
+    this.session.on('sessionAuthenticationSucceeded', this.loadUserInformations.bind(this));
+  },
+
   authenticate() {
-    var session = this.get('session');
     var token = this.extractToken();
-
-    session.on('sessionAuthenticationSucceeded', this.loadUserInformations.bind(this));
-
-    return session.authenticate('authenticator:custom', token);
+    return this.session.authenticate('authenticator:custom', token);
   },
 
   loadUserInformations(data) {
@@ -35,16 +35,18 @@ export default Ember.Object.create({
   },
 
   extractToken() {
-    var session = this.get('session');
-    var token = session.get('token');
-    return token || '';
+    return this.session.get('token') || ' ';
   },
 
   setToken(token) {
-    var session = this.get('session');
-    if(token && token !== this.get('token')) {
-      session.set('token', token);
+    let currentToken = this.session.get('token');
+    if(this._isSameToken(token,currentToken)) {
+      this.session.set('token', token);
     }
+  },
+
+  _isSameToken(token, comparedToken) {
+    return token && token !== comparedToken
   },
 
   _setData(data) {

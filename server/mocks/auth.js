@@ -42,17 +42,17 @@ module.exports = function(app) {
     var fb = isAuthFacebook(token);
     var tw = isAuthTwitter(token);
 
-    // NOTE : change to node node whay to detected development
-    /*if(fb === false || tw === false) {
-      res.status(401);
-    }*/
+    // on prod it is fb && tw
+    if(fb === true || tw === true) {
+      return res.send({
+        token: token,
+        isAuthenticated: true,
+        isAuthFacebook: true,
+        isAuthTwitter: true
+      });
+    }
 
-    res.send({
-      token: token,
-      isAuthenticated: true,
-      isAuthFacebook: fb,
-      isAuthTwitter: tw
-    });
+    return res.status(401);
   });
 
   route.get('/user', function(req, res) {

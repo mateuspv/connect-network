@@ -23,16 +23,16 @@ module.exports = function(environment) {
       'media-src': "'self'",
       'frame-src': "http://www.youtube.com"
     },
-
-    'simple-auth': {
-      routeAfterAuthentication: 'posts.index',
-    },
-
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
     }
   };
+
+  ENV['simple-auth'] = {
+    routeAfterAuthentication: 'posts.index',
+    store: 'simple-auth-session-store:local-storage'
+  }
 
   if (environment === 'development') {
     ENV.APP.URL_API = 'http://localhost:4200';
@@ -40,8 +40,6 @@ module.exports = function(environment) {
     ENV.APP.URL_AUTH_FACEBOOK = ENV.APP.URL_API + '/api/auth/facebook';
     ENV.APP.URL_AUTH_TWITTER = ENV.APP.URL_API + '/api/auth/twitter';
     ENV.APP.URL = 'http://localhost:4200/';
-
-    ENV['simple-auth'].store = 'simple-auth-session-store:local-storage';
   }
 
   if (environment === 'test') {
@@ -51,7 +49,7 @@ module.exports = function(environment) {
     ENV.APP.URL_AUTH_TWITTER = ENV.APP.URL_API + '/api/auth/twitter';
     ENV.APP.URL = 'http://localhost:4200/';
 
-    ENV['simple-auth'].store = 'simple-auth-session-store:ephemeral';
+    //ENV['simple-auth'].store = 'simple-auth-session-store:ephemeral';
 
     ENV.baseURL = '/';
     ENV.locationType = 'none';
@@ -69,7 +67,6 @@ module.exports = function(environment) {
     ENV.APP.URL_AUTH_FACEBOOK = ENV.APP.URL_API + '/api/auth/facebook';
     ENV.APP.URL_AUTH_TWITTER = ENV.APP.URL_API + '/api/auth/twitter';
     ENV.APP.URL = 'https://connect-network.herokuapp.com/';
-    ENV['simple-auth'].store = 'simple-auth-session-store:local-storage';
   }
 
   ENV['simple-auth'].authorizer ='authorizer:custom';

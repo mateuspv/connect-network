@@ -51,11 +51,18 @@ ks-support-ie = 8
 @import 'vendor/rewrite'
 @import 'theme'
 
+.container
+  heigth 100%
+
 .search-result
   &-item
-    width 250px
     margin 0 auto 30px auto
-    +above($desktop)
-      float left
-      &:nth-child(odd)
-        margin-right 80px
+
+.page-title
+  font-size 50px
+  font-family $font-primary
+  color rgba(0, 0, 0, 0.6)
+
+.page-container
+  +above(600px)
+    width 600px

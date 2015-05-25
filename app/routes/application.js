@@ -9,10 +9,4 @@ export default Ember.Route.extend(ApplicationRouteMixin, CurrentFullPathMixin, {
 
     applicationCtrl.set('currentFullPath', currentFullPath);
   }.observes('currentFullPath'),
-
-  actions: {
-    logout() {
-      this.get('session').invalidate();
-    }
-  }
 });

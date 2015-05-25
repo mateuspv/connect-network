@@ -9,6 +9,6 @@ export default Ember.Controller.extend(CurrentNetwork, CurrentPage, {
     },
 
     filterByText(text) {
-    }
+    },
   }
 });

@@ -22,7 +22,7 @@
     "body-parser": "^1.12.4",
     "broccoli-asset-rev": "^2.0.2",
     "connect-restreamer": "^1.0.2",
-    "ember-cli": "0.2.3",
+    "ember-cli": "^0.2.5",
     "ember-cli-app-version": "0.3.3",
     "ember-cli-babel": "^5.0.0",
     "ember-cli-content-security-policy": "0.4.0",
@@ -37,11 +37,11 @@
     "ember-cli-uglify": "1.0.1",
     "ember-data": "1.0.0-beta.16.1",
     "ember-export-application-global": "^1.0.2",
-    "express": "^4.12.3",
+    "express": "^4.12.4",
     "glob": "^4.5.3",
     "jeet": "^6.1.2",
     "kouto-swiss": "^0.11.11",
-    "morgan": "^1.5.2",
+    "morgan": "^1.5.3",
     "rupture": "^0.6.1"
   }
 }

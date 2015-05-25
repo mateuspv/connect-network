@@ -1,4 +1,4 @@
-<div {{bind-attr class="currentPage session.isAuthenticated:auth:no-auth currentNetwork"}}>
+<div {{bind-attr class="currentPage session.isAuthenticated:auth:no-auth currentNetwork :container"}}>
   <div {{bind-attr class=":site-container isDashboardEnabled:active"}}>
     {{header-connect network=currentNetwork session=session toggleSidebar="toggleSidebar"}}
     {{#if session.isAuthenticated}}
@@ -6,7 +6,13 @@
     {{/if}}
     <div class="site-main-container">
       <div class="black-mask"></div>
-      {{outlet}}
+      {{#if session.isAuthenticated}}
+        <div class="page-container">
+          {{outlet}}
+        </div>
+      {{else}}
+        {{outlet}}
+      {{/if}}
     </div>
   </div>
 </div>

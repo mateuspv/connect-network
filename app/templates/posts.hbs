@@ -1,17 +1,13 @@
-<ul class="timeline">
+<div class="timeline">
   <form {{action "newPost" on="submit"}} class="post-form">
-    <label>
-      {{textarea value=message placeholder="What's happening?" class="post-form-textarea"}}
-    </label>
+    {{textarea value=message placeholder="What's happening?" class="post-form-textarea"}}
     <div class="post-form-options-container">
       <div class="post-form-options">
-        <label>Twitter</label>
-        {{input type="checkbox" name="isForTwitter" checked=isForTwitter}}
-        <label>Facebook</label>
-        {{input type="checkbox" name="isForFacebook" checked=isForFacebook}}
+        <button {{action "toggleNetworkState" "twitter"}} {{bind-attr class=":post-form-button twitter:active"}}>Twitter</button>
+        <button {{action "toggleNetworkState" "facebook"}} {{bind-attr class=":post-form-button facebook:active"}}>Facebook</button>
       </div>
       <button class="post-form-submit">Submit</button>
     </div>
   </form>
 	{{outlet}}
-</ul>
+</div>

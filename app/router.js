@@ -15,11 +15,11 @@ export default Router.map(function() {
     this.route('result');
   });
 
-  this.resource('profiles', {path: 'profiles/:network/:id'}, function() {
+  this.route('profiles', {path: 'profiles/:network/:id'}, function() {
   });
 
-  this.resource('friends', function() {
-  });
+  this.route('friends');
+  this.route('group', {path: 'group/:id'});
 
   this.route('login', {path: '/'});
   this.route('about');
