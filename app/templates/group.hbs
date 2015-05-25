@@ -1,6 +1,14 @@
-<h1>hello</h1>
-{{model.id}}
-{{#each model.posts as |post|}}
-  {{post.message}}
-{{/each}}
-
+<div class="profile">
+  <div style="{{profile-banner model.cover}}" class="profile-cover facebook"></div>
+  <div class="profile-cover-overlayer"></div>
+  <div class="profile-user">
+    <div class="profile-user-information">
+      <h1 class="profile-user-name">{{model.name}}</h1>
+      <a {{bind-attr href=model.link}} class="profile-btn facebook" rel="external" target="_blank">facebook</a>
+    </div>
+    <p class="profile-user-description">{{model.description}}</p>
+  </div>
+  <ul class="timeline">
+  </ul>
+  {{outlet}}
+</div>

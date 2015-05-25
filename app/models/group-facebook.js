@@ -7,4 +7,5 @@ export default DS.Model.extend({
   description: DS.attr('string'),
   link: DS.attr('string'),
   posts: DS.hasMany('post-facebook', {async: true}),
+  members: DS.hasMany('user-facebook', {async: true})
 });

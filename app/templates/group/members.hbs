@@ -1,0 +1,12 @@
+<ul class="user-friend-list page-container">
+{{#each model.members as |member|}}
+  <li class="user-friend-item">
+    {{#link-to "profiles" "facebook" member.id class="user-friend-image-link"}}
+      <img class="user-friend-image" {{bind-attr src=member.image}}>
+      {{/link-to}}
+    <img  class="user-friend-network"  src="svg/facebook.svg" alt="">
+    {{#link-to "profiles" "facebook" member.id class="user-friend-name"}}{{member.name}}{{/link-to}}
+  </li>
+{{/each}}
+</ul>
+{{outlet}}
