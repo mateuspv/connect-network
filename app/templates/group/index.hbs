@@ -1,4 +1,8 @@
-{{#link-to 'group.members'}}members{{/link-to}}
-{{#each model.posts as |post|}}
-  <li>{{post-facebook post=post}}</li>
-{{/each}}
+<div class="profile-menu">
+  {{#link-to 'group.members'}}members{{/link-to}}
+</div>
+<ul class="timeline">
+  {{#each model.posts as |post|}}
+    <li>{{post-facebook post=post}}</li>
+  {{/each}}
+</ul>

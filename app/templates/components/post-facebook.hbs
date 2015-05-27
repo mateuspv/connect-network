@@ -1,1 +1,43 @@
-{{yield}}
+<div class="post">
+  {{#link-to "profiles" "facebook" post.owner.id class="post-user-image-container"}}
+    <img {{bind-attr src=post.owner.image}} class="post-user-image">
+  {{/link-to}}
+
+  <div class="post-content">
+    <div class="post-user">
+      {{#link-to "profiles" "facebook" post.owner.id class="post-user-name"}}
+        {{post.owner.name}}
+      {{/link-to}}
+      <a class="post-time-ago">{{from-now post.created_at}}</a>
+      {{#if post.to}}
+        <a class="post-to" href="#">to {{post.to}}</a>
+      {{/if}}
+      <a href={{post.link}} target="_blank">see on facebook</a>
+      <img class="post-network" src="svg/facebook.svg" alt="">
+    </div>
+    <p class="post-text">
+      {{#link-to "posts.post" "facebook" post.id class="post-text-container"}}
+        {{displayMessage}}
+      {{/link-to}}
+      <button {{bind-attr class=":post-message-preview shouldDisplayFullMessage:active"}} {{action "toggleMessagePreview"}}>{{toggleMessageText}}</button>
+    </p>
+  </div>
+
+  <div class="post-midia">
+    {{#if post.picture}}
+      <img {{bind-attr src=post.picture}} class="post-media-image">
+    {{/if}}
+    {{#if post.video}}
+      {{!-- <iframe frameborder="0" {{bind-attr src=post.video}}></iframe> --}}
+    {{/if}}
+  </div>
+  <ul class="post-actions facebook">
+    <li class="post-actions-item">
+      <button {{bind-attr class="post.like:liked"}} {{action "like"}}>{{likeText}}</button>
+    </li>
+    <li class="post-actions-item">
+      {{#link-to "posts.post" "facebook" post.id class="post-text-container"}}commnet{{/link-to}}
+    </li>
+  </ul>
+  {{yield}}
+</div>

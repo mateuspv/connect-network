@@ -18,14 +18,28 @@ module.exports = function(app) {
   });
 
   route.put('/:id', function (req, res) {
+    var response = {};
     var post = req.body.post;
-    post.user_likes = true;
+    post.like = !post.like;
     post.id = req.params.id;
-    console.log(post);
-    res.status(200).send({
-      "post": post
-    }).end();
+
+    response['post_facebook'] = post;
+
+    res.status(200).send(response).end();
   });
+
+
+  route.put('/facebook/:id', function (req, res) {
+    var response = {};
+    var post = req.body.postFacebook;
+    post.like = !post.like;
+    post.id = req.params.id;
+
+    response['post_facebook'] = post;
+
+    res.status(200).send(response).end();
+  });
+
 
 
   app.use('/api/connect/posts', route);
