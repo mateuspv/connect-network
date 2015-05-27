@@ -9,6 +9,10 @@ export default Ember.Component.extend({
   displayMessage: function() {
     let message = this.get('post.message');
 
+    if(!message) {
+      return;
+    }
+
     if(this._shouldDisplayFullMessage()) {
       return message;
     }

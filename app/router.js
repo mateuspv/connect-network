@@ -19,7 +19,7 @@ export default Router.map(function() {
   });
 
   this.route('friends');
-  this.resource('group', {path: 'group/:id'}, function() {
+  this.resource('group', {path: 'group/:network/:id'}, function() {
     this.route('index');
     this.route('members');
   });
