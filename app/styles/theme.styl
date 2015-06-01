@@ -27,15 +27,18 @@ tag-button($color, $contrast)
   border-color alpha($contrast, 0.3)
 
 +on-facebook()
-  .tag-button
+  .tag-button,
+  .trending-topics-link
     tag-button($color-facebook, $color-facebook-dark)
 
 +on-twitter()
-  .tag-button
+  .tag-button,
+  .trending-topics-link
     tag-button($color-twitter, $color-twitter-dark)
 
 +on-googleplus()
-  .tag-button
+  .tag-button,
+  .trending-topics-link
     tag-button($color-googleplus, $color-googleplus-dark)
 
 /**

@@ -1,0 +1,15 @@
+<h2 class="tag-list-title">Filter by</h2>
+<div class="dashboard-filter-container">
+  {{input class="dashboard-filter" type="text" value=findWithMessage placeholder="Post message"}}
+</div>
+<ul class="tag-list">
+  <li class="tag-item"><button {{action "toggleNetwork" "facebook"}} filter-by="facebook" class="tag-button">facebook</button></li>
+  <li class="tag-item"><button {{action "toggleNetwork" "twitter"}} filter-by="twitter" class="tag-button">twitter</button></li>
+  <li class="tag-item"><button {{action "toggleNetwork" "all"}} filter-by="all" class="tag-button">All</button></li>
+</ul>
+<hr>
+ <ul class="tag-list">
+  <li class="tag-item"><button {{action "toggleMedia" "video"}} filter-by="video" class="tag-button">video</button></li>
+  <li class="tag-item"><button {{action "toggleMedia" "image"}} filter-by="image" class="tag-button">picture</button></li>
+  <li class="tag-item"><button {{action "toggleMedia" "all"}} filter-by="media-all" class="tag-button">any</button></li>
+</ul>

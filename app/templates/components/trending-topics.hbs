@@ -1,7 +1,7 @@
-<ul class="tag-list">
+<ul class="trending-topics">
   {{#each hash in hashtags}}
-    <li class="tag-item">
-      {{#link-to "search.index" (query-params q=hash) class="tag-button"}}{{hash}}{{/link-to}}
+    <li class="trending-topics-item">
+      {{#link-to "search.index" (query-params q=hash) class="trending-topics-link"}}{{hash}}{{/link-to}}
     </li>
   {{/each}}
 </ul>
