@@ -1,11 +1,17 @@
 <ul class="user-friend-list">
-{{#each model as |friend|}}
+{{#each model.groups as |group|}}
+  {{group-facebook group=group}}
+{{/each}}
+</ul>
+
+<ul>
+{{#each model.friends as |friend|}}
 	<li class="user-friend-item">
-		{{#link-to 'profiles' friend.network friend.id class="user-friend-image-link"}}
+		{{#link-to "profiles" friend.network friend.id class="user-friend-image-link"}}
 			<img class="user-friend-image" {{bind-attr src=friend.user_image}}>
 	  	{{/link-to}}
 		<img  class="user-friend-network"  src="svg/{{unbound friend.network}}.svg" alt="">
-		{{#link-to 'profiles' friend.network friend.id class="user-friend-name"}}{{friend.name}}{{/link-to}}
+		{{#link-to "profiles" friend.network friend.id class="user-friend-name"}}{{friend.name}}{{/link-to}}
 	</li>
 {{/each}}
 </ul>
