@@ -13,7 +13,7 @@ let Query = Ember.Object.create({
   page: false,
   group: false,
   types() {
-    let facebook = this._allFacebookTypes()
+    let facebook = this._allFacebookTypes();
     let twitter = this._allTwitterTypes();
     return [].concat(facebook, twitter);
   },

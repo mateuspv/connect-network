@@ -1,0 +1,8 @@
+<ul class="tag-list">
+  {{#each hash in hashtags}}
+    <li class="tag-item">
+      {{#link-to "search.index" (query-params q=hash) class="tag-button"}}{{hash}}{{/link-to}}
+    </li>
+  {{/each}}
+</ul>
+{{yield}}

@@ -17,12 +17,8 @@
       <li class="tag-item"><button {{action "toggleMedia" "image"}} filter-by="image" class="tag-button">picture</button></li>
       <li class="tag-item"><button {{action "toggleMedia" "all"}} filter-by="media-all" class="tag-button">any</button></li>
     </ul>
-    <hr>
-    <ul class="tag-list">
-      {{#each hashtag in hashtags}}
-        <li class="tag-item"><button {{action "toggleHashtag" hashtag}} class="tag-button">{{hashtag}}</button></li>
-      {{/each}}
-    </ul>
+    <h2 class="tag-list-title">Trends</h2>
+    {{trending-topics}}
   </div>
   {{yield}}
 </div>

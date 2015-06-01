@@ -19,7 +19,7 @@ export default Ember.Component.extend({
 
     let limitedMessage = message.slice(0, MESSAGE_LIMIT);
 
-    return `${limitedMessage}...`
+    return `${limitedMessage}...`;
   }.property('shouldDisplayFullMessage'),
 
   // better create a pluralizer

@@ -46,7 +46,7 @@ export default Ember.Object.create({
   },
 
   _isSameToken(token, comparedToken) {
-    return token && token !== comparedToken
+    return token && token !== comparedToken;
   },
 
   _setData(data) {
