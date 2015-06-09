@@ -18,8 +18,5 @@ export default Ember.Controller.extend(CurrentNetwork, CurrentPage, {
     toggleSidebar() {
       this.toggleProperty('isDashboardEnabled');
     },
-
-    filterByText(text) {
-    },
   }
 });

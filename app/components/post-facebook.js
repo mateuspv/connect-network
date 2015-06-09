@@ -6,6 +6,11 @@ const PREVIEW_BUTTON = {show: 'show more', hide:'show less'};
 export default Ember.Component.extend({
   shouldDisplayFullMessage: false,
 
+  shareOnFacebookLink: function() {
+    let link = this.get('post.link');
+    return `https://www.facebook.com/sharer/sharer.php?u=${link}`;
+  }.property(''),
+
   displayMessage: function() {
     let message = this.get('post.message');
 

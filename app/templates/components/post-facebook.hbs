@@ -36,6 +36,9 @@
       <button {{bind-attr class="post.like:liked"}} {{action "like"}}>{{likeText}}</button>
     </li>
     <li class="post-actions-item">
+      <a {{bind-attr href=shareOnFacebookLink}} target="_blank">share</a>
+    </li>
+    <li class="post-actions-item">
       {{#link-to "posts.post" "facebook" post.id class="post-text-container"}}commnet{{/link-to}}
     </li>
   </ul>

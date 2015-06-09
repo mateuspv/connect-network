@@ -7,6 +7,7 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
     this.render('connect-filters', {
       into: 'application',
       outlet: 'filters',
+      controller: 'posts/index'
     });
   },
   model() {
