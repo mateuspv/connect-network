@@ -14,6 +14,11 @@ $button-authentication
   font-size 17.5px
   font-weight 700
   color #FFF
+  +below(510px)
+    width 110px
+    float left
+    font-size 12px
+    padding 15px
 
 button-authentication(color, color-contrast)
   @extend $button-authentication
@@ -21,8 +26,7 @@ button-authentication(color, color-contrast)
   border 1px solid color
   &:hover
     background-image linear-gradient(0, color-contrast, color)
-  +below(510px)
-    color red
+
 
 .btn-authentication
   &-icon
