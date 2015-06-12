@@ -1,3 +1,4 @@
+<div class="page-container">
 {{#each model as |person|}}
   <div class="profile">
     <div style="{{profile-banner person.profile_banner_url}}" {{bind-attr class=":profile-cover person.network"}}></div>
@@ -48,3 +49,4 @@
     {{outlet}}
   </div>
 {{/each}}
+</div>

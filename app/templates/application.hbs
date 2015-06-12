@@ -10,9 +10,7 @@
     <div class="site-main-container">
       <div class="black-mask"></div>
       {{#if session.isAuthenticated}}
-        <div class="page-container">
-          {{outlet}}
-        </div>
+        {{outlet}}
       {{else}}
         {{outlet}}
       {{/if}}
