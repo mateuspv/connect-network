@@ -20,11 +20,11 @@
 
   <ul {{bind-attr class=":post-actions post.network"}}>
     <li class="post-actions-item">
-      <div {{bind-attr class=":icon-retweet post.retweeted:active"}}></div>
+      <div {{bind-attr class=":icon-retweet post.retweeted:active"}} {{action "retweet"}}></div>
       <p class="post-retweet-count">{{post.retweet_count}}</p>
     </li>
     <li class="post-actions-item">
-      <div {{bind-attr class=":icon-favorite post.favorited:active"}} {{action "like"}}></div>
+      <div {{bind-attr class=":icon-favorite post.favorited:active"}} {{action "favorite"}}></div>
       <p class="post-favorite-count">{{post.favorite_count}}</p>
     </li>
     <li class="post-actions-item">

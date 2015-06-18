@@ -1,38 +1,30 @@
 <div class="search-result">
   <h1 class="page-title">Results</h1>
 
-  <h2 class="page-subtitle"></h2>
   <ul>
   {{#each model.user_facebook as |user|}}
     <li class="search-result-item">{{profile-card user=user network="facebook" description=user.description}}</li>
   {{/each}}
   </ul>
 
-  <h1>Users Twitter</h1>
   <ul>
   {{#each model.user_twitter as |user|}}
     <li class="search-result-item">{{profile-card user=user network="twitter" description=user.bio}}</li>
   {{/each}}
   </ul>
-  <br>
 
-  <h1>Page facebook</h1>
   <ul>
   {{#each model.page_facebook as |page|}}
     <li class="search-result-item">{{profile-card user=page network="facebook" description=user.about}}</li>
   {{/each}}
-  <br>
   </ul>
 
-  <h1>Group Facebook</h1>
   <ul>
   {{#each model.group_facebook as |group|}}
     <li class="search-result-item">{{group-facebook group=group}}</li>
   {{/each}}
   </ul>
 
-  <br>
-  <h1>Posts twitter</h1>
   <ul>
   {{#each model.post_twitter as |post|}}
     {{post-twitter post=post retweet="true"}}

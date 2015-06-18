@@ -40,7 +40,14 @@ module.exports = function(app) {
     res.status(200).send(response).end();
   });
 
-
+  route.put('/twitter/:id', function (req, res) {
+    var response = {};
+    var post = req.body.postTwitter;
+    var changes = post.changes;
+    post.id = req.params.id;
+    response['post_twitter'] = post;
+    res.status(200).send(response).end();
+  });
 
   app.use('/api/connect/posts', route);
 };
