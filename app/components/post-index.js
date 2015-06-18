@@ -30,12 +30,29 @@ export default Ember.Component.extend({
     return network === expected ? true : false;
   },
 
+  _trackChange(prop) {
+    var post = this.get('post');
+    post.set('changes', prop);
+    post.toggleProperty(prop);
+    return post.save();
+  },
+
   actions: {
     like() {
       var post = this.get('post');
       post.set('changes', 'like');
       post.toggleProperty('user_likes', true);
       return post.save();
+    },
+    retweet() {
+      let retweeted = this.get('post.retweeted');
+      if(!retweeted) {
+        this._trackChange('retweeted');
+      }
+    },
+
+    favorite() {
+      this._trackChange('favorited');
     }
   }
 });

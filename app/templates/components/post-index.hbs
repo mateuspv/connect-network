@@ -41,11 +41,11 @@
 
     {{#if isTwitter}}
       <li class="post-actions-item">
-        <div class="icon-retweet"></div>
+        <div class="icon-retweet" {{action "retweet"}}>></div>
         <p class="post-retweet-count">{{post.shares_count}}</p>
       </li>
       <li class="post-actions-item">
-        <div {{bind-attr class=":icon-favorite post.user_likes:active"}} {{action "like"}}></div>
+        <div {{bind-attr class=":icon-favorite post.user_likes:active"}} {{action "favorite"}}></div>
         <p class="post-favorite-count">{{post.likes_count}}</p>
       </li>
       <li class="post-actions-item">
