@@ -35,6 +35,9 @@
         <button {{bind-attr class="post.user_likes:liked"}} {{action "like"}}>{{likeText}}</button>
       </li>
       <li class="post-actions-item">
+        <a {{bind-attr href=shareOnFacebookLink}} target="_blank">share</a>
+      </li>
+      <li class="post-actions-item">
         {{#link-to "posts.post" post.network post.id class="post-text-container"}}commnet{{/link-to}}
       </li>
     {{/if}}
@@ -43,9 +46,6 @@
       <li class="post-actions-item">
         <div class="icon-retweet" {{action "retweet"}}>></div>
         <p class="post-retweet-count">{{post.shares_count}}</p>
-      </li>
-      <li class="post-actions-item">
-        <a {{bind-attr href=shareOnFacebookLink}} target="_blank">share</a>
       </li>
       <li class="post-actions-item">
         <div {{bind-attr class=":icon-favorite post.user_likes:active"}} {{action "favorite"}}></div>
