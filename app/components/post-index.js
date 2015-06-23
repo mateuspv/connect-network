@@ -1,6 +1,10 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+  shareOnFacebookLink: function() {
+    let link = this.get('post.link');
+    return `https://www.facebook.com/sharer/sharer.php?u=${link}`;
+  }.property(''),
 
   isTwitter: function () {
     return this._isFrom('twitter');
@@ -52,7 +56,7 @@ export default Ember.Component.extend({
     },
 
     favorite() {
-      this._trackChange('favorited');
+      this._trackChange('user_likes');
     }
   }
 });

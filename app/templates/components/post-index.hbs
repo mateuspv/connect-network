@@ -45,6 +45,9 @@
         <p class="post-retweet-count">{{post.shares_count}}</p>
       </li>
       <li class="post-actions-item">
+        <a {{bind-attr href=shareOnFacebookLink}} target="_blank">share</a>
+      </li>
+      <li class="post-actions-item">
         <div {{bind-attr class=":icon-favorite post.user_likes:active"}} {{action "favorite"}}></div>
         <p class="post-favorite-count">{{post.likes_count}}</p>
       </li>

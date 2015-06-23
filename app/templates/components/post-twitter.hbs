@@ -18,6 +18,12 @@
     {{/link-to}}
   </div>
 
+  <div class="post-midia">
+    {{#if post.image}}
+      <img {{bind-attr src=post.image}} class="post-media-image">
+    {{/if}}
+  </div>
+
   <ul {{bind-attr class=":post-actions post.network"}}>
     <li class="post-actions-item">
       <div {{bind-attr class=":icon-retweet post.retweeted:active"}} {{action "retweet"}}></div>
