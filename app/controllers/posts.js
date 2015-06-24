@@ -6,6 +6,7 @@ export default Ember.Controller.extend({
 
   createPost(message, network) {
     let post = this.store.createRecord('post', {message, network});
+    alert('Posted')
     post.save();
   },
 
