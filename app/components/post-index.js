@@ -44,7 +44,7 @@ export default Ember.Component.extend({
   actions: {
     like() {
       var post = this.get('post');
-      post.set('changes', 'like');
+      post.set('changes', 'user_likes');
       post.toggleProperty('user_likes', true);
       return post.save();
     },
