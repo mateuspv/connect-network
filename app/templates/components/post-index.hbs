@@ -44,7 +44,7 @@
 
     {{#if isTwitter}}
       <li class="post-actions-item">
-        <div class="icon-retweet" {{action "retweet"}}>></div>
+        <div {{bind-attr class=":icon-retweet post.user_shares:active"}} {{action "retweet"}}>></div>
         <p class="post-retweet-count">{{post.shares_count}}</p>
       </li>
       <li class="post-actions-item">

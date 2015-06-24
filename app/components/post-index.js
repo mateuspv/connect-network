@@ -52,6 +52,7 @@ export default Ember.Component.extend({
       let retweeted = this.get('post.retweeted');
       if(!retweeted) {
         this._trackChange('retweeted');
+        this.set('post.user_shares', true);
       }
     },
 
